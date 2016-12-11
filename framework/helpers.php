@@ -1,26 +1,18 @@
 <?php
 
+use Controllers\PagesController;
+
+use Models\User;
+use Models\Auth;
+
 use Core\Template;
-use Core\Responder;
+use Core\Middleware;
 use Core\Lang;
 
-// debug function - dump vars and exits
+// debug function - die and dump vars
 function dd($vars) {
 	var_dump($vars);
 	die();
-}
-
-// custom env function that handles default values as well
-function env($envString, $defaultVariable = "") {
-	if (! getenv($envString)) {
-		return $defaultVariable;
-	}
-	return getenv($envString);
-}
-
-// redirects the client to a given url address
-function redirect($url) {
-	Responder::redirect($url);
 }
 
 // function for rendering templates
@@ -48,6 +40,53 @@ function url($location) {
 	echo getAbsolutePath() . $location;
 }
 
+// redirects the user back to landing page if he is not a user
+function redirectIfNotAdmin() {
+	if ( ! Middleware::isUserAdmin() ) {
+		PagesController::index();
+	}
+}
+
+// returns true if the user is logged in
+function redirectIfNotLoggedIn() {
+	if ( ! Middleware::isUserLoggedIn()) {
+		PagesController::index();
+	}
+}
+
+// gets the logged-in user from the session
+function getUser() {
+	return Auth::user();
+}
+
+// check if the supplied user is an admin
+function isAdmin($id) {
+	$user = User::get("id", $id);
+	if ($user) {
+		if ($user["access_level"] == 1) {
+			return true;
+		}
+		return false;
+	}
+	return false;
+}
+
+// checks if the user is an admin
+function isUserAdmin() {
+	if (Middleware::isUserAdmin()) {
+		return true;
+	}
+	return false;
+}
+
+// returns true if the user is blocked
+function isUserBlocked($id) {
+	if ( Middleware::isUserBlocked($id) ) {
+		return true;
+	}
+	return false;
+}
+
 // returns the translation of the string
 function mutation($langString) {
 	Lang::get($langString);
@@ -64,4 +103,10 @@ function flashMessage() {
 		echo $messageHtml;
 	}
 	return NULL;
+}
+
+// redirects the client to a given address
+function redirect($address) {
+	header('Location: ' . $address);
+	die();
 }

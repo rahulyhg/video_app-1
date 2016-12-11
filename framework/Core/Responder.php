@@ -4,17 +4,6 @@ namespace Core;
 
 class Responder {
 	/**
-	 * Redirects the client to a given URL address.
-	 * 
-	 * @param string $url
-	 * @return header
-	 */
-	public static function redirect($url) {
-		header('Location: ' . $url);
-	}
-
-
-	/**
 	 * Responds with a json.
 	 * 
 	 * @param  array $data

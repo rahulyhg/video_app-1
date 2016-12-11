@@ -1,3 +1,8 @@
 // setup 
 @import "setup/styleguide";
 @import "setup/mixins";
+
+// partials
+@import "partials/navigation";
+@import "partials/layout";
+@import "partials/login";

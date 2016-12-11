@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Models;
 use Models\User;
 
 class Auth {

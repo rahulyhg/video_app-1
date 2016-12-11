@@ -1,12 +1,6 @@
 {
-	"name": "nualiian/php-m",
-	"description": "The phpM boilerplate.",
-	"keywords": ["framework", "boilerplate", "phpM"],
-	"license": "MIT",
-	"type": "project",
+	"name": "video-app",
 	"require": {
-		"josegonzalez/dotenv": "dev-master",
-		"altorouter/altorouter": "^1.2",
-		"vrana/notorm": "dev-master"
+		"ircmaxell/filterus": "^1.0"
 	}
 }

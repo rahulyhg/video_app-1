@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d70ef2f1eea1f6c4e4621bd70dc210e",
-    "content-hash": "05695c00ee7cacd946269fa40b2569dc",
+    "hash": "8387ba37ada3dfec23198c1956ee36cb",
+    "content-hash": "a0b1e9b02988f566ad5783d433941e24",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -63,162 +63,58 @@
             "time": "2015-11-30 00:47:43"
         },
         {
-            "name": "josegonzalez/dotenv",
-            "version": "dev-master",
+            "name": "ircmaxell/filterus",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/josegonzalez/php-dotenv.git",
-                "reference": "879a161c512ba37910b53a63fbccb3aa02708a04"
+                "url": "https://github.com/ircmaxell/filterus.git",
+                "reference": "6670d75f978b2713e1ec33acbdea73c92216e726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/879a161c512ba37910b53a63fbccb3aa02708a04",
-                "reference": "879a161c512ba37910b53a63fbccb3aa02708a04",
-                "shasum": ""
-            },
-            "require": {
-                "m1/env": "2.*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "satooshi/php-coveralls": "1.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "josegonzalez\\Dotenv": [
-                        "src",
-                        "tests"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jose Diaz-Gonzalez",
-                    "email": "dotenv@josegonzalez.com",
-                    "homepage": "http://josediazgonzalez.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "dotenv file parsing for PHP",
-            "homepage": "https://github.com/josegonzalez/php-dotenv",
-            "keywords": [
-                "configuration",
-                "dotenv",
-                "php"
-            ],
-            "time": "2016-08-30 02:07:17"
-        },
-        {
-            "name": "m1/env",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/m1/Env.git",
-                "reference": "d87eddd031f2aa5450fa04bb1325de8a489b3cd0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/m1/Env/zipball/d87eddd031f2aa5450fa04bb1325de8a489b3cd0",
-                "reference": "d87eddd031f2aa5450fa04bb1325de8a489b3cd0",
+                "url": "https://api.github.com/repos/ircmaxell/filterus/zipball/6670d75f978b2713e1ec33acbdea73c92216e726",
+                "reference": "6670d75f978b2713e1ec33acbdea73c92216e726",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "suggest": {
-                "josegonzalez/dotenv": "For loading of .env",
-                "m1/vars": "For loading of configs"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "M1\\Env\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Miles Croxford",
-                    "email": "hello@milescroxford.com",
-                    "homepage": "http://milescroxford.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Env is a lightweight library bringing .env file parser compatibility to PHP. In short - it enables you to read .env files with PHP.",
-            "homepage": "https://github.com/m1/Env",
-            "keywords": [
-                ".env",
-                "config",
-                "dotenv",
-                "env",
-                "loader",
-                "m1",
-                "parser",
-                "support"
-            ],
-            "time": "2016-10-06 19:31:28"
-        },
-        {
-            "name": "vrana/notorm",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vrana/notorm.git",
-                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vrana/notorm/zipball/e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
-                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
-                "shasum": ""
+                "phpunit/phpunit": "^5"
             },
             "type": "library",
             "autoload": {
                 "files": [
-                    "NotORM.php"
-                ]
+                    "lib/Filterus/functions.php"
+                ],
+                "psr-0": {
+                    "Filterus": "lib"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache-2.0",
-                "GPL-2.0+"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Jakub Vrána",
-                    "homepage": "http://www.vrana.cz/"
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@php.net",
+                    "homepage": "http://blog.ircmaxell.com"
                 }
             ],
-            "description": "NotORM is a PHP library for simple working with data in the database.",
-            "homepage": "http://www.notorm.com/",
+            "description": "A library for filtering variables in PHP",
+            "homepage": "https://github.com/ircmaxell/filterus",
             "keywords": [
-                "database",
-                "dbal"
+                "filter",
+                "security"
             ],
-            "time": "2014-10-30 16:55:08"
+            "time": "2016-08-15 20:09:15"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "josegonzalez/dotenv": 20,
-        "vrana/notorm": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

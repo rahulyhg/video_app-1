@@ -1,6 +1,6 @@
 <?php
 /**
- * phpM framework class autoloader
+ * Framework class autoloader.
  */
 
 spl_autoload_register(function($className) {

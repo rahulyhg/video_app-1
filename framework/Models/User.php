@@ -2,19 +2,25 @@
 
 namespace Models;
 
-class User extends Model {
+class User {
 	/**
-	 * Set the table for the model
-	 * 
-	 * @var string
+	 * Gets all the users
 	 */
-	protected $table = "users";
+	public static function all() {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		try {
+			$users = $db->user()->select("*");
+		} catch (PDOException $e) {
+			return false;
+		}
+		return $users;
+	}
 
 	/**
-	 * Persists a user to a database.
-	 * 
-	 * @param  array $credentials
-	 * @return boolean
+	 * Persists a user to a database
 	 */
 	public static function create($credentials) {
 		// get the db
@@ -34,5 +40,71 @@ class User extends Model {
 		} catch (PDOException $e) {
 			return false;
 		}
+	}
+
+
+	/**
+	 * Gets the user by specified parameter
+	 * 
+	 * @param  string $key
+	 * @param  mixed $value
+	 * @return object
+	 */
+	public static function get($key, $value) {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		// get the user
+		try {
+			$userQuery = $db->user("$key = ?", "$value");
+			$user = $userQuery->fetch();
+			$userCount = $userQuery->count();
+
+			if ($userCount < 1) {
+				return false;
+			}
+			return $user;
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
+
+	/**
+	 * Blocks the user
+	 */
+	public static function block($id) {
+		// get the user
+		$userToBeBlocked = self::get("id", $id);
+
+		// block the user
+		$userToBeBlocked->update([
+			'blocked' => 1
+		]);
+		return true;
+	}
+
+	/**
+	 * Unblocks the user
+	 */
+	public static function unblock($id) {
+		// get the user
+		$userToBeUnblocked = self::get("id", $id);
+
+		// unblock the user
+		$userToBeUnblocked->update([
+			'blocked' => 0
+		]);
+		return true;
+	}
+
+	// Deletes the user
+	public static function delete($id) {
+		// get the user
+		$user = self::get("id", $id);
+
+		// delete the user
+		$user->delete();
+		return true;
 	}
 }

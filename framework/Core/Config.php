@@ -4,7 +4,7 @@ namespace Core;
 
 class Config {
 	/**
-	 * The main folder for config files
+	 * The main folder for congif files
 	 * 
 	 * @var string
 	 */

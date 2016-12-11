@@ -5,27 +5,15 @@ namespace Core;
 use Core\Config;
 
 use \PDO;
-use josegonzalez\Dotenv\Loader;
 use NotORM;
 
 class App {
-    /**
-     * Member variable that holds the database.
-     * 
-     * @var object
-     */
-    public $database;
-
-
     /**
      * Bootstraps the application.
      */
     public function bootstrap() {
         // start the session
         session_start();
-
-        // load the environmental variables
-        $this->loadEnvironmentalVariables();
 
         // set the language, if there is no language already set
         if (! $this->getLocale()) {
@@ -40,15 +28,9 @@ class App {
     }
 
     /**
-     * Loads the environmental variables
-     */
-    private function loadEnvironmentalVariables() {
-        $loader = new Loader('.env');
-        $loader->parse()->toServer(true)->putenv(true)->toEnv(true);
-    }
-
-    /**
-     * Connects the app to the database.
+     * Conenct the app to the database
+     * 
+     * @return
      */
     private function connectToDatabase() {
         try {
@@ -81,7 +63,7 @@ class App {
     }
 
     /**
-     * Gets the instance of the app's database
+     * Gets the instance of app's database
      * 
      * @return Object
      */
