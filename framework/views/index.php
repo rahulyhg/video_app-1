@@ -11,8 +11,8 @@
 			<div class="col s12 m12 l12">
 				<div class="card">
 					<div class="card-content">
-						<h3>Welcome to phpM</h3>
-						<p>Take a look around</p>
+						<h3>Video App</h3>
+						<p>Lecture schedules</p>
 						<div class="card-action">
 						</div>
 					</div>
