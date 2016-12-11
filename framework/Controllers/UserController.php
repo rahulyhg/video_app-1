@@ -163,17 +163,7 @@ class UserController {
 		// get the user
 		$user = User::get("id", $user_id);
 
-		// validate if the user can access the lectures
-		if ($user) {
-			if (Auth::user()["id"] == $user_id || isAdmin(Auth::user())) {
-				// get the lectures
-				$lectures = $user->lecture();
-
-				// render the view with the lectures
-				render("lectures/index", ["lectures" => $lectures, "user" => $user]);
-			}
-			PagesController::index();
-		}
-		PagesController::index();
+		// render the view with the lectures
+		render("lectures/index", ["lectures" => $user->lecture(), "user" => $user]);
 	}
 }

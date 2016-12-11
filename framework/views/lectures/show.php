@@ -13,7 +13,6 @@
 			<form method="POST" action="<?php url('lecture') ?>" class="col s12" id="lecture-form">
 				
 			</form>
-
 		</div>
 	</div>
 

@@ -46,20 +46,16 @@ class LectureController {
 	 * @return view
 	 */
 	public static function store($data) {
-		// set up validators
-		$validator = Validator::make("string,min:5");
-
-		// validate the whole input
-		// @TODO -> finish validation
-
 		// add user to the $data aray
 		$data["user_id"] = Auth::user()["id"];
 
 		// store into database
-		Lecture::store($data);
-
-		// return back to lectures dashboard
-		self::dashboard();
+		$record = Lecture::store($data);
+		if ($record) {
+			// return back to lectures dashboard
+			redirect('/lecture'); // self::dashboard();
+		}
+		redirect('/lecture');
 	}
 
 	/**

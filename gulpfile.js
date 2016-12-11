@@ -14,7 +14,12 @@ var paths = {
 		dest: './public/css/'
 	},
 	js: {
-		src: ['./public/components/jquery/dist/jquery.js', './public/components/materialize/dist/js/materialize.js', './resources/js/*.js', './resources/js/*/*.js'],
+		src: ['./public/components/jquery/dist/jquery.js',
+			  './public/components/materialize/dist/js/materialize.js',
+			  './public/components/momentjs/min/moment.min.js',
+			  './resources/js/*.js',
+			  './resources/js/*/*.js'
+		],
 		dest: './public/js/'
 	},
 	materialize: {

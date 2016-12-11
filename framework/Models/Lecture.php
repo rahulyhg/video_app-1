@@ -41,10 +41,9 @@ class Lecture {
 		$lectureData = [
 			"user_id" => $data["user_id"],
 			"note" => $data["note"],
-			"surface" => $data["surface"],
-			"pvc_foil" => $data["pvc_foil"],
-			"ral_colour" => $data["ral_colour"],
-			"panel_design" => $data["panel_design"]
+			"date" => $data["date"],
+			"starts_at" => $data["starts_at"],
+			"ends_at" => $data["ends_at"]
 		];
 
 		// insert data into the database
