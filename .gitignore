@@ -1,7 +1,10 @@
 .env
 
 public/css
+public/css/*
 public/fonts
+public/fonts/*
+public/js
 public/js/*
 
 node_modules/
