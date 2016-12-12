@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="<?php asset("css/materialize.min.css") ?>">
 
 <!-- custom stylesheets -->
+<link rel="stylesheet" type="text/css" href="<?php asset("components/fullcalendar/dist/fullcalendar.min.css") ?>">
 <link rel="stylesheet" type="text/css" href="<?php asset("css/app.min.css") ?>">
 
 <!-- material icons -->

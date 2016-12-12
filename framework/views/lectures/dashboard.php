@@ -16,7 +16,9 @@
 					</div>
 					<div class="card-action">
 						<?php if (getUser()): ?>
-							<a href="<?php url('lecture/create') ?>"><?php mutation("lectures.create") ?></a>
+							<?php if (isUserAdmin()): ?>
+								<a href="<?php url('lecture/create') ?>"><?php mutation("lectures.create") ?></a>
+							<?php endif ?>
 							<a href="<?php url('user/' . getUser()["id"] . '/lectures') ?>"><?php mutation("lectures.showMy") ?></a>
 						<?php endif ?>
 					</div>

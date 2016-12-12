@@ -19,10 +19,10 @@ return array(
 		'addNewUser' => 'Pridať nového študenta'
 	),
 	'lectures' => array(
-		'heading' => 'Správa prednášok',
-		'info' => 'V tomto rozhraní môžete sledovať, vytvárať a zapisovať sa na prednášky',
+		'heading' => 'Prednášky',
+		'info' => 'V tomto rozhraní môžete sledovať, spravovať a vytvárať prednášky',
 		'create' => 'Nová prednáška',
-		'showMy' => 'Moje prednášky',
+		'showMy' => 'Prednášky',
 		'show' => 'Prednášky študenta: ',
 		'noLectures' => 'Žiadne zapísane prednášky',
 		'number' => 'Č.:',
@@ -48,7 +48,7 @@ return array(
 	),
     'nav' => array(
         'title' => 'VideoApp',
-        'manageResellers' => 'Správa študentov',
+        'manageUsers' => 'Správa študentov',
         'lectures' => 'Správa prednášok',
         'logout' => 'Odhlásiť sa',
         'login' => 'Prihlásiť sa',

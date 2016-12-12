@@ -8,7 +8,7 @@
 					<li>
 						<a href="<?php url('users') ?>">
 							<i class="material-icons left">supervisor_account</i>
-							<?php mutation('nav.manageResellers') ?>
+							<?php mutation('nav.manageUsers') ?>
 						</a>
 					</li>
 				<?php endif ?>
@@ -46,7 +46,7 @@
 					<li>
 						<a href="<?php url('users') ?>">
 							<i class="material-icons left">supervisor_account</i>
-							<?php mutation('nav.manageResellers') ?>
+							<?php mutation('nav.manageUsers') ?>
 						</a>
 					</li>
 				<?php endif ?>

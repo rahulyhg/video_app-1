@@ -2,7 +2,26 @@
 
 namespace Models;
 
+use Core\Transformer;
+
 class Lecture {
+	/**
+	 * Gets all the lectures
+	 */
+	public static function all() {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		try {
+			$lectures = $db->lecture();
+			$lecturesArray = Transformer::objectsToArray($lectures);
+			return $lecturesArray;
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
+
 	/**
 	 * Gets the lecture by a specified parameter
 	 * 
@@ -39,8 +58,9 @@ class Lecture {
 
 		// prepare the data
 		$lectureData = [
-			"user_id" => $data["user_id"],
+			"title" => $data["title"],
 			"note" => $data["note"],
+			"user_id" => $data["user_id"],
 			"date" => $data["date"],
 			"starts_at" => $data["starts_at"],
 			"ends_at" => $data["ends_at"]

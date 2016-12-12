@@ -15,20 +15,26 @@
 					<div class="card-content">
 						<h3><?php mutation("index.welcomeMessage") ?></h3>
 						<p><?php mutation("index.info") ?></p>
-						</div>
-						<div class="card-action">
-							<?php if (! getUser()): ?>
-								<a href="<?php url('login') ?>"><?php mutation("index.login") ?></a>
-							<?php else: ?>
-								<?php if (isAdmin(getUser()["id"])): ?>
-									<a href="<?php url('users') ?>"><?php mutation("nav.manageResellers") ?></a>
-								<?php endif ?>
-									<a href="<?php url('lecture') ?>"><?php mutation("nav.lectures") ?></a>
-							<?php endif ?>
-						</div>
 					</div>
+
+					<div class="card-action">
+						<?php if (! getUser()): ?>
+							<a href="<?php url('login') ?>"><?php mutation("index.login") ?></a>
+						<?php else: ?>
+							<?php if (isAdmin(getUser()["id"])): ?>
+								<a href="<?php url('users') ?>"><?php mutation("nav.manageUsers") ?></a>
+							<?php endif ?>
+								<a href="<?php url('lecture') ?>"><?php mutation("nav.lectures") ?></a>
+						<?php endif ?>
+					</div>
+
+					<div class="card-action">
+						<div id="calendar"></div>
+					</div>
+
 				</div>
 			</div>
+		</div>
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>

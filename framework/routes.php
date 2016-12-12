@@ -97,6 +97,11 @@ $router->map('POST', '/register', function() {
 /**
  * Lecture routes
  */
+// get all the lectures
+$router->map('GET', '/lectures', function() {
+    LectureController::index();
+});
+
 // get the lecture dashboard
 $router->map('GET', '/lecture', function() {
     redirectIfNotLoggedIn();
@@ -110,6 +115,9 @@ $router->map('POST', '/lecture', function() {
 // displays the form for creating new lectures
 $router->map('GET', '/lecture/create', function() {
     redirectIfNotLoggedIn();
+    if (! isUserAdmin()) {
+        LectureController::dashboard();
+    }
     LectureController::create();
 });
 // shows a single lecture

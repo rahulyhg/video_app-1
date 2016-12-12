@@ -14,11 +14,18 @@ var paths = {
 		dest: './public/css/'
 	},
 	js: {
-		src: ['./public/components/jquery/dist/jquery.js',
-			  './public/components/materialize/dist/js/materialize.js',
-			  './public/components/momentjs/min/moment.min.js',
-			  './resources/js/*.js',
-			  './resources/js/*/*.js'
+		src: [
+			'./public/components/jquery/dist/jquery.js',
+			'./public/components/materialize/dist/js/materialize.js',
+			'./public/components/momentjs/min/moment.min.js',
+			'./public/components/fullcalendar/dist/fullcalendar.min.js',
+			'./public/components/fullcalendar/dist/locale/sk.js',
+			'./resources/js/*.js',
+			'./resources/js/*/*.js'
+		],
+		watch: [
+			'./resources/js/*.js',
+			'./resources/js/*/*.js'
 		],
 		dest: './public/js/'
 	},
@@ -84,7 +91,7 @@ gulp.task('watch', function() {
 	watch(paths.sass.watch, function() {
 		tasks.sass();
 	});
-	watch(paths.js.src, function() {
+	watch(paths.js.watch, function() {
 		tasks.js();
 	});
 });

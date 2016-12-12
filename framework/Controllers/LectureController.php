@@ -10,6 +10,19 @@ use Core\Responder;
 
 class LectureController {
 	/**
+	 * Returns a json with all the lecture events.
+	 * 
+	 * @return json
+	 */
+	public static function index() {
+		// select all the lectures
+		$lectures = Lecture::all();
+
+		// send the lectures back in json
+		Responder::respondWithJson("lectures", $lectures, 200);
+	}
+
+	/**
 	 * Returns the dashboard for managing lectures
 	 * 
 	 * @return view
@@ -56,21 +69,5 @@ class LectureController {
 			redirect('/lecture'); // self::dashboard();
 		}
 		redirect('/lecture');
-	}
-
-	/**
-	 * Export the lecture to pdf.
-	 * 
-	 * @param  int $lecture_id
-	 * @return view
-	 */
-	public static function export($lecture_id) {
-		// get the lecture
-		$lecture = Lecture::get("id", $lecture_id);
-		die();
-		// check if there is a lecture with this id
-
-		// return the json interpretation of the query
-		Responder::respondWithJson("lecture", $lecture, 200);
 	}
 }

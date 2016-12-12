@@ -14,18 +14,17 @@ return array(
 		'welcomeMessage' => 'IP Camera App index',
 		'info' => 'This interface allows you to manage your lectures and see live lectures via IP cameras.',
 		'login' => 'Login',
-		
 	),
 	'buttons' => array(
 		'addNewUser' => 'Add a new student'
 	),
 	'lectures' => array(
-		'heading' => 'Manage subscriptions',
-		'info' => 'This interface allows you to view your lectures and subscribe to new ones',
+		'heading' => 'Lectures',
+		'info' => 'This interface allows you to view, manage and create new lectures',
 		'create' => 'Add a Lecture',
-		'showMy' => 'My lectures',
-		'show' => 'Lectures of:',
-		'noSubscriptions' => 'No lecture subscriptions',
+		'showMy' => 'Lectures',
+		'show' => 'Lectures of: ',
+		'noSubscriptions' => 'No lecture subscriptions yet',
 		'number' => 'No.:',
 		'detail' => 'Detail'
 	),
@@ -49,7 +48,7 @@ return array(
 	),
     'nav' => array(
         'title' => 'VideoApp',
-        'manageResellers' => 'Manage Students',
+        'manageUsers' => 'Manage Students',
         'lectures' => 'Lectures',
         'logout' => 'Logout',
         'login' => 'Login',
