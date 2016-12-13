@@ -65,7 +65,7 @@ $(document).ready(function() {
 			setUpCalendar(events);
 		},
 		error: function(error) {
-			console.log("there was an error retrieving the lectures");
+			// console.log("there was an error retrieving the lectures");
 		}
 	});
 });
