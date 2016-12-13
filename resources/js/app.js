@@ -5,7 +5,7 @@ var setUpCalendar = function(events) {
 		locale: 'sk',
 		displayEventTime: true,
 		displayEventEnd: true,
-		defaultView: 'agendaDay',
+		defaultView: 'agendaWeek',
 		header: {
 			left:   'title',
 			center: '',
