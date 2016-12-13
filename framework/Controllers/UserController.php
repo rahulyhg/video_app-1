@@ -3,9 +3,12 @@
 namespace Controllers;
 
 use Controllers\PagesController;
+
+use Core\Config;
+
 use Models\User;
 use Models\Auth;
-use Core\Config;
+use Models\Lecture;
 
 class UserController {
 	/**
@@ -60,6 +63,44 @@ class UserController {
 		}
 
 		// redirect to index if there is no user logged in
+		PagesController::index();
+	}
+
+	/**
+	 * Subscribes the user to a lecture.
+	 * 
+	 * @param  int $lecture_id
+	 */
+	public static function subscribe($lecture_id) {
+		// get the lecture
+		$lecture = Lecture::get("id", $lecture_id);
+		if (! $lecture) {
+			PagesController::index();
+		}
+
+		// save the subscription
+		User::subscribe($lecture["id"]);
+
+		// redirect back
+		PagesController::index();
+	}
+
+	/**
+	 * Unsubscribes from a lecture
+	 * 
+	 * @param  int $lecture_id
+	 */
+	public static function unsubscribe($lecture_id) {
+		// get the lecture
+		$lecture = Lecture::get("id", $lecture_id);
+		if (! $lecture) {
+			PagesController::index();
+		}
+
+		// save the subscription
+		User::unsubscribe($lecture["id"]);
+
+		// redirect back to index
 		PagesController::index();
 	}
 
@@ -163,7 +204,10 @@ class UserController {
 		// get the user
 		$user = User::get("id", $user_id);
 
+		// get user lectures
+		$lecturesForUser = Lecture::getForUser($user_id);
+
 		// render the view with the lectures
-		render("lectures/index", ["lectures" => $user->lecture(), "user" => $user]);
+		render("lectures/index", ["lectures" => $lecturesForUser, "user" => $user]);
 	}
 }

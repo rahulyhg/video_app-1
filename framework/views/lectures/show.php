@@ -8,11 +8,25 @@
 		<?php insert("partials/nav") ?>
 
 		<div class="row">
-			<h3 class="center-align"><?php mutation("lectures.number") ?> <?php echo $lecture["id"] ?></h3>
+			<div class="col s12 m12 l12">
+				<div class="card">
+					<div class="card-content">
+						<h3><?php echo $lecture["title"] ?></h3>
+						<p><?php echo $lecture["note"] ?></p>
+					</div>
 
-			<form method="POST" action="<?php url('lecture') ?>" class="col s12" id="lecture-form">
-				
-			</form>
+					<div class="card-action">
+						<?php if (getUser()): ?>
+							<?php if (isUserSubscribedToLecture($lecture["id"])): ?>
+								<a href="<?php url("unsubscribe/$lecture[id]") ?>" class="modal-action modal-close waves-effect waves-green btn-flat"><?php mutation("lectures.unsubscribe") ?></a>
+							<?php else: ?>
+								<a href="<?php url("subscribe/$lecture[id]") ?>" class="modal-action modal-close waves-effect waves-green btn-flat"><?php mutation("lectures.subscribe") ?></a>
+							<?php endif ?>
+						<?php endif ?>
+					</div>
+
+				</div>
+			</div>
 		</div>
 	</div>
 

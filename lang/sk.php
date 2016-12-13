@@ -22,11 +22,13 @@ return array(
 		'heading' => 'Prednášky',
 		'info' => 'V tomto rozhraní môžete sledovať, spravovať a vytvárať prednášky',
 		'create' => 'Nová prednáška',
-		'showMy' => 'Prednášky',
+		'showMy' => 'Moje prednášky',
 		'show' => 'Prednášky študenta: ',
 		'noLectures' => 'Žiadne zapísane prednášky',
 		'number' => 'Č.:',
-		'detail' => 'Detail'
+		'detail' => 'Detail',
+		'subscribe' => 'Zapísať sa',
+		'unsubscribe' => 'Zrušiť zápis'
 	),
 	'users' => array(
 		'detail' => 'Detail',

@@ -7,7 +7,11 @@ class PagesController {
 	 * Displays the landing page
 	 */
 	public static function index($message = []) {
-		render("index", NULL, $message);
+		// get all the lectures
+		$lectures = \Models\Lecture::all();
+
+		// render the index with all the lectures
+		render("index", ["lectures" => $lectures], $message);
 	}
 
 	/**

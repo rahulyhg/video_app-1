@@ -32,6 +32,26 @@
 						<div id="calendar"></div>
 					</div>
 
+					<!-- modals for lectures -->
+					<?php foreach ($lectures as $lecture): ?>
+						<div id="modal_<?php echo $lecture["id"] ?>" class="modal bottom-sheet">
+							<div class="modal-content">
+								<h4><?php echo $lecture["title"] ?></h4>
+								<p><?php echo $lecture["note"] ?></p>
+							</div>
+							<?php if (getuser()): ?>
+								<div class="modal-footer">
+									<a href="<?php url("lecture/$lecture[id]") ?>" class="modal-action modal-close waves-effect waves-green btn-flat"><?php mutation("lectures.detail") ?></a>
+									<?php if (isUserSubscribedToLecture($lecture["id"])): ?>
+										<a href="<?php url("unsubscribe/$lecture[id]") ?>" class="modal-action modal-close waves-effect waves-green btn-flat"><?php mutation("lectures.unsubscribe") ?></a>
+									<?php else: ?>
+										<a href="<?php url("subscribe/$lecture[id]") ?>" class="modal-action modal-close waves-effect waves-green btn-flat"><?php mutation("lectures.subscribe") ?></a>
+									<?php endif ?>
+								</div>
+							<?php endif ?>
+						</div>
+					<?php endforeach ?>
+
 				</div>
 			</div>
 		</div>

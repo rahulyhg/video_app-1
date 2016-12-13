@@ -5,7 +5,7 @@ use Models\User;
 
 class Auth {
 	/**
-	 * Logs in the user
+	 * Logs the user in
 	 */
 	public static function login($credentials) {
 		// check if the user is in the database

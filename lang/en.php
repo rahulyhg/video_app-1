@@ -22,11 +22,13 @@ return array(
 		'heading' => 'Lectures',
 		'info' => 'This interface allows you to view, manage and create new lectures',
 		'create' => 'Add a Lecture',
-		'showMy' => 'Lectures',
+		'showMy' => 'My lectures',
 		'show' => 'Lectures of: ',
 		'noSubscriptions' => 'No lecture subscriptions yet',
 		'number' => 'No.:',
-		'detail' => 'Detail'
+		'detail' => 'Detail',
+		'subscribe' => 'Subscribe',
+		'unsubscribe' => 'Unusbscribe'
 	),
 	'users' => array(
 		'detail' => 'Detail',

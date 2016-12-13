@@ -10,6 +10,10 @@ var setUpCalendar = function(events) {
 			left:   'title',
 			center: '',
 			right:  'today month, agendaWeek, agendaDay prev, next'
+		},
+		eventClick: function(response) {
+			var eventModalSelector = '#modal_' + response.id;
+			$(eventModalSelector).modal('open');
 		}
 	});
 };
@@ -34,7 +38,7 @@ $(document).ready(function() {
 		selectYears: 15
 	});
 
-	// get all the lectures
+	// get all the lectuz
 	$.ajax({
 		type: "GET",
 		url: "/lectures",

@@ -59,7 +59,7 @@ class LectureController {
 	 * @return view
 	 */
 	public static function store($data) {
-		// add user to the $data aray
+		// add user to the $data arays
 		$data["user_id"] = Auth::user()["id"];
 
 		// store into database
@@ -69,5 +69,15 @@ class LectureController {
 			redirect('/lecture'); // self::dashboard();
 		}
 		redirect('/lecture');
+	}
+
+	/**
+	 * Get all the subscribers for a lecture
+	 * 
+	 * @param  int $lecture_id
+	 * @return array
+	 */
+	public static function getSubscribers($lecture_id) {
+		$subscribers = Lecture::getSubscribers($lecture_id);
 	}
 }

@@ -15,7 +15,7 @@
 							<?php mutation("users.settingsHeading") ?>
 						</span>
 						<p>
-							<?php echo $user["description"] ?>
+							<?php echo $user["email"] ?>
 						</p>
 					</div>
 					<div class="card-action">

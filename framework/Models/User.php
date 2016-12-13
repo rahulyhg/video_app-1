@@ -98,7 +98,11 @@ class User {
 		return true;
 	}
 
-	// Deletes the user
+	/**
+	 * Deletes the user
+	 * 
+	 * @param  int $id
+	 */
 	public static function delete($id) {
 		// get the user
 		$user = self::get("id", $id);
@@ -106,5 +110,55 @@ class User {
 		// delete the user
 		$user->delete();
 		return true;
+	}
+
+	/**
+	 * Subscribes the user to a lecture
+	 * 
+	 * @param  int $lecture_id
+	 */
+	public static function subscribe($lecture_id) {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		// check if the record is unique
+		$subscriptionRecordCount = $db->lecture_user()->where("user_id", Auth::user()["id"])->where("lecture_id", $lecture_id)->count();
+		if ($subscriptionRecordCount != 0) {
+			return false;
+		}
+
+		// insert the subscription record
+		$subscriptionsTable = $db->lecture_user();
+		$record = $subscriptionsTable->insert([
+			'user_id' => Auth::user()["id"],
+			'lecture_id' => $lecture_id
+		]);
+
+		if ($record) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Unsubscribes the user from a lecture
+	 * 
+	 * @param  int $lecture_id
+	 */
+	public static function unsubscribe($lecture_id) {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		// check if there is such a record
+		$subscriptionRecord = $db->lecture_user()->where("user_id", Auth::user()["id"])->where("lecture_id", $lecture_id);
+		if (count($subscriptionRecord) == 0) {
+			return;
+		}
+
+		// delete the subscription record
+		$subscriptionRecord->delete();
+		return;
 	}
 }

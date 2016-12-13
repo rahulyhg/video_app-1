@@ -79,6 +79,14 @@ function isUserAdmin() {
 	return false;
 }
 
+// checks if the user is subscribed to a lecture
+function isUserSubscribedToLecture($lecture_id) {
+	if (Middleware::isUserSubscribedToLecture($lecture_id)) {
+		return true;
+	}
+	return false;
+}
+
 // returns true if the user is blocked
 function isUserBlocked($id) {
 	if ( Middleware::isUserBlocked($id) ) {
@@ -107,6 +115,6 @@ function flashMessage() {
 
 // redirects the client to a given address
 function redirect($address) {
-	header('Location: ' . $address);
+	header('Location: ' . getAbsolutePath() . $address);
 	die();
 }

@@ -123,8 +123,21 @@ $router->map('GET', '/lecture/create', function() {
 // shows a single lecture
 $router->map('GET', '/lecture/[i:lecture_id]', function($lecture_id) {
     redirectIfNotLoggedIn();
-    
     LectureController::show($lecture_id);
+});
+// subscribe to a lecture
+$router->map('GET', '/subscribe/[i:lecture_id]', function($lecture_id) {
+    redirectIfNotLoggedIn();
+    UserController::subscribe($lecture_id);
+});
+// unsubscribe from a lecture
+$router->map('GET', '/unsubscribe/[i:lecture_id]', function($lecture_id) {
+    redirectIfNotLoggedIn();
+
+    if (Middleware::isUserSubscribedToLecture($lecture_id)) {
+        UserController::unsubscribe($lecture_id);
+    }
+    PagesController::index();
 });
 
 // handle route matches

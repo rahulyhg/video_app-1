@@ -53,4 +53,22 @@ class Middleware {
 		}
 		return false;
 	}
+
+	/**
+	 * Returns true if the logged user is subscribed to a given lecture
+	 * 
+	 * @param  int  $lecture_id
+	 * @return boolean
+	 */
+	public static function isUserSubscribedToLecture($lecture_id) {
+		// get the user
+		$user = Auth::user();
+
+		// get the subscription record
+		$subscription = Lecture::getSubscriptionRecord($user["id"], $lecture_id);
+		if (count($subscription) == 0) {
+			return false;
+		}
+		return true;
+	}
 }

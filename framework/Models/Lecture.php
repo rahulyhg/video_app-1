@@ -50,7 +50,10 @@ class Lecture {
 	}
 
 	/**
-	 * Persist the lecture to the database
+	 * Persist the lecture to the database.
+	 * 
+	 * @param array $data
+	 * 
 	 */
 	public static function store($data) {
 		global $app;
@@ -78,5 +81,43 @@ class Lecture {
 		} catch (PDOException $e) {
 			return false;
 		}
+	}
+
+	/**
+	 * Get all the lectures for a user.
+	 * 
+	 * @param  int $user_id
+	 * @return array
+	 */
+	public static function getForUser($user_id) {
+		// get the database
+		global $app;
+		$db = $app->getDatabase();
+
+		// get all the records
+		$subscriptions = $db->lecture_user()->where("user_id", $user_id);
+		$subscriptionIdsArray = array();
+		foreach ($subscriptions as $subscription) {
+			array_push($subscriptionIdsArray, $subscription["lecture_id"]);
+		}
+		$lectures = $db->lecture()->where("id", $subscriptionIdsArray);
+		return $lectures;
+	}
+
+	/**
+	 * Get a specific lecture.
+	 * 
+	 * @param  int $user_id
+	 * @param  int $lecture_id
+	 * @return Object
+	 */
+	public static function getSubscriptionRecord($user_id, $lecture_id) {
+		// get the database
+		global $app;
+		$db = $app->getDatabase();
+
+		// return the record
+		$record = $db->lecture_user()->where("lecture_id", $lecture_id)->where("user_id", $user_id);
+		return $record;
 	}
 }
