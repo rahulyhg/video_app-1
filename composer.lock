@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8387ba37ada3dfec23198c1956ee36cb",
-    "content-hash": "a0b1e9b02988f566ad5783d433941e24",
+    "hash": "c221ad78bf5e75be8df565580ddb3bb8",
+    "content-hash": "e3f91f357d0ddf1ed6fde23299b88466",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -61,54 +61,6 @@
                 "routing"
             ],
             "time": "2015-11-30 00:47:43"
-        },
-        {
-            "name": "ircmaxell/filterus",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ircmaxell/filterus.git",
-                "reference": "6670d75f978b2713e1ec33acbdea73c92216e726"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/filterus/zipball/6670d75f978b2713e1ec33acbdea73c92216e726",
-                "reference": "6670d75f978b2713e1ec33acbdea73c92216e726",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/Filterus/functions.php"
-                ],
-                "psr-0": {
-                    "Filterus": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
-                    "homepage": "http://blog.ircmaxell.com"
-                }
-            ],
-            "description": "A library for filtering variables in PHP",
-            "homepage": "https://github.com/ircmaxell/filterus",
-            "keywords": [
-                "filter",
-                "security"
-            ],
-            "time": "2016-08-15 20:09:15"
         }
     ],
     "packages-dev": [],

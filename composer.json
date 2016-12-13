@@ -1,6 +1,6 @@
 {
 	"name": "video-app",
 	"require": {
-		"ircmaxell/filterus": "^1.0"
+		"altorouter/altorouter": "^1.2"
 	}
 }
