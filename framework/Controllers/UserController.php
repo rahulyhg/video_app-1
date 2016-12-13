@@ -122,7 +122,7 @@ class UserController {
 	/**
 	 * Creates a new user
 	 */
-	public static function create($credentials = array()) {
+	public static function create($credentials = []) {
 		// get the variables from post request
 		$email = $credentials["email"];
 		$password = $credentials["password"];
