@@ -127,8 +127,8 @@ class UserController {
 		$email = $credentials["email"];
 		$password = $credentials["password"];
 
-		if any of the needed fields is empty, do not store the user
-		if ($credentials["email"] == "" || credentials["password"] == "") { // should be replaced with a proper validator
+		// if any of the needed fields is empty, do not store the user
+		if ($credentials["email"] == "" || credentials["password"] == "") {
 			PagesController::index();
 		}
 
