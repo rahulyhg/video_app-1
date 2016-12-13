@@ -128,9 +128,8 @@ class UserController {
 		$password = $credentials["password"];
 
 		// if any of the needed fields is empty, do not store the user
-		if ($credentials["email"] == "" || credentials["password"] == "") { // should be replaced with a proper validator
-			PagesController::index();
-		}
+<!--====  End of Section comment  ====-->
+
 
 		// check if there is a user like that
 		$user = User::get("email", $email);
