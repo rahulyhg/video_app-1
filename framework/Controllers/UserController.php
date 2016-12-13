@@ -127,9 +127,10 @@ class UserController {
 		$email = $credentials["email"];
 		$password = $credentials["password"];
 
-		// if any of the needed fields is empty, do not store the user
-<!--====  End of Section comment  ====-->
-
+		if any of the needed fields is empty, do not store the user
+		if ($credentials["email"] == "" || credentials["password"] == "") { // should be replaced with a proper validator
+			PagesController::index();
+		}
 
 		// check if there is a user like that
 		$user = User::get("email", $email);
@@ -210,3 +211,5 @@ class UserController {
 		render("lectures/index", ["lectures" => $lecturesForUser, "user" => $user]);
 	}
 }
+
+?>
