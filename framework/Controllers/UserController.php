@@ -107,7 +107,7 @@ class UserController {
 	/**
 	 * Attempts to log the user in
 	 */
-	public static function login($credentials = array()) {
+	public static function login($credentials) {
 		// attempt to log the user in
 		$loginSuccess = Auth::login($credentials);
 
