@@ -54,6 +54,12 @@ return array(
         'lectures' => 'Správa prednášok',
         'logout' => 'Odhlásiť sa',
         'login' => 'Prihlásiť sa',
-        'settings' => 'Nastavenia'
+        'settings' => 'Nastavenia',
+        'cameras' => 'Kamery'
+    ),
+    'cameras' => array(
+    	'single' => 'Kamera',
+    	'title' => 'Kamery',
+    	'show' => 'Zobraziť stream kamery'
     )
 );

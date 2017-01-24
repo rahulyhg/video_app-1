@@ -4,6 +4,12 @@
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<?php if (getUser()): ?>
+				<li>
+					<a href="<?php url('cameras') ?>">
+						<i class="material-icons left">camera_enhance</i>
+						<?php mutation('nav.cameras') ?>
+					</a>
+				</li>
 				<?php if (isAdmin(getUser()["id"])): ?>
 					<li>
 						<a href="<?php url('users') ?>">
@@ -41,6 +47,12 @@
 		</ul>
 
 		<ul class="side-nav" id="mobile-demo">
+			<li>
+				<a href="<?php url('cameras') ?>">
+					<i class="material-icons left">camera_enhance</i>
+					<?php mutation('nav.cameras') ?>
+				</a>
+			</li>
 			<?php if (getUser()): ?>
 				<?php if (isAdmin(getUser()["id"])): ?>
 					<li>

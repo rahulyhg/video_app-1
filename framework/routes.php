@@ -5,6 +5,7 @@
 use Controllers\PagesController;
 use Controllers\UserController;
 use Controllers\LectureController;
+use Controllers\CamerasController;
 
 use Models\Auth;
 use Core\Middleware;
@@ -138,6 +139,16 @@ $router->map('GET', '/unsubscribe/[i:lecture_id]', function($lecture_id) {
         UserController::unsubscribe($lecture_id);
     }
     PagesController::index();
+});
+
+/**
+ * Camera routes
+ */
+$router->map('GET', '/cameras', function () {
+    CamerasController::index();
+});
+$router->map('GET', '/camera/[i:camera_id]', function ($camera_id) {
+    CamerasController::show($camera_id);
 });
 
 // handle route matches

@@ -54,6 +54,10 @@ return array(
         'lectures' => 'Lectures',
         'logout' => 'Logout',
         'login' => 'Login',
-        'settings' => 'Settings'
+        'settings' => 'Settings',
+        'cameras' => 'Cameras'
+    ),
+    'cameras' => array(
+    	'title' => 'Cameras'
     )
 );

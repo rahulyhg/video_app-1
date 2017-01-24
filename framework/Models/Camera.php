@@ -23,4 +23,31 @@ class Camera {
 			return false;
 		}
 	}
+
+	/**
+	 * Gets a specified camera.
+	 * 
+	 * @param  string $key
+	 * @param  mixed $value
+	 * @return object
+	 */
+	public static function get($key, $value) {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		// get the camera
+		try {
+			$cameraQuery = $db->camera("$key = ?", "$value");
+			$camera = $cameraQuery->fetch();
+			$cameraCount = $cameraQuery->count();
+
+			if ($cameraCount < 1) {
+				return false;
+			}
+			return $camera;
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
 }
