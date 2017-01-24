@@ -36,12 +36,13 @@
 
 				<div class="row">
 					<div class="input-field col s12 m12 l12">
-					<select>
-						<option value="">Vyberte kameru</option>
-						<?php foreach ($cameras as $camera): ?>
-							<?php echo $camera->id ?>
-						<?php endforeach ?>
-					</select>
+						<h2>Kamera</h2>
+						<select class="browser-default" name="camera_id">
+							<option value="">Vyberte kameru</option>
+							<?php foreach ($cameras as $camera): ?>
+								<option value="<?php echo $camera["id"] ?>"><?php echo $camera["name"] ?></option>
+							<?php endforeach ?>
+						</select>
 					</div>
 				</div>
 

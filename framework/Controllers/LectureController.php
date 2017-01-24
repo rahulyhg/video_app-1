@@ -70,7 +70,7 @@ class LectureController {
 		$record = Lecture::store($data);
 		if ($record) {
 			// return back to lectures dashboard
-			redirect('/lecture'); // self::dashboard();
+			self::dashboard();
 		}
 		redirect('/lecture');
 	}

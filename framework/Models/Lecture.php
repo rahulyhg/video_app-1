@@ -63,8 +63,9 @@ class Lecture {
 		$lectureData = [
 			"title" => $data["title"],
 			"note" => $data["note"],
-			"user_id" => $data["user_id"],
 			"date" => $data["date"],
+			"user_id" => $data["user_id"],
+			"camera_id" => $data["camera_id"],
 			"starts_at" => $data["starts_at"],
 			"ends_at" => $data["ends_at"]
 		];

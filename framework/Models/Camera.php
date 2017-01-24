@@ -16,7 +16,7 @@ class Camera {
 		$db = $app->getDatabase();
 
 		try {
-			$cameras = $db->lecture();
+			$cameras = $db->camera();
 			$camerasArray = Transformer::objectsToArray($cameras);
 			return $camerasArray;
 		} catch (PDOException $e) {
