@@ -1,6 +1,7 @@
 // selector definitions
 var cameraStreamHolder = "#camera_stream_holder";
 var cameraIframeSelector = "#camera_stream";
+var hostNameUrl = window.location.protocol + '//' + window.location.hostname + '/';
 
 // displays the stream
 var displayStream = function(url) {
@@ -9,7 +10,7 @@ var displayStream = function(url) {
 
 // diplays the error stream
 var displayErrorStream = function() {
-	$(cameraStreamHolder).html("");
+	$(cameraStreamHolder).html("<img src=" + hostNameUrl + "public/images/static.gif width='100%'>");
 }
 
 // getting the camera stream
