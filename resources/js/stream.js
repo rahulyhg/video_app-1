@@ -10,7 +10,7 @@ var displayStream = function(url) {
 
 // diplays the error stream
 var displayErrorStream = function() {
-	$(cameraStreamHolder).html("<img src=" + hostNameUrl + "public/images/static.gif width='100%'>");
+	$(cameraStreamHolder).html("<img src=" + hostNameUrl + "public/images/static.gif id='static'>");
 }
 
 // getting the camera stream
