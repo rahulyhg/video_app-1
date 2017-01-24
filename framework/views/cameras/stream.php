@@ -13,11 +13,10 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<?php echo $camera["name"] ?>
-		</div>
+		<div class="row" id="camera_stream_holder"></div>
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
+	<script type="text/javascript">getTheCameraStream('<?php echo $camera["ip_address"] ?>');</script>
 </body>
 </html>

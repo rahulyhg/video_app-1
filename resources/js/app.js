@@ -38,7 +38,7 @@ $(document).ready(function() {
 		selectYears: 15
 	});
 
-	// get all the lectuz
+	// get all the lectures
 	$.ajax({
 		type: "GET",
 		url: "/lectures",

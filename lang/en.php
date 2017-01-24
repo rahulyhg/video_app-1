@@ -48,16 +48,18 @@ return array(
 		'unblock' => 'Un-block this student',
 		'delete' => 'Delete this user'
 	),
-    'nav' => array(
-        'title' => 'VideoApp',
-        'manageUsers' => 'Manage Students',
-        'lectures' => 'Lectures',
-        'logout' => 'Logout',
-        'login' => 'Login',
-        'settings' => 'Settings',
-        'cameras' => 'Cameras'
-    ),
-    'cameras' => array(
-    	'title' => 'Cameras'
-    )
+	'nav' => array(
+		'title' => 'VideoApp',
+		'manageUsers' => 'Manage Students',
+		'lectures' => 'Lectures',
+		'logout' => 'Logout',
+		'login' => 'Login',
+		'settings' => 'Settings',
+		'cameras' => 'Cameras'
+	),
+	'cameras' => array(
+		'single' => 'Camera',
+		'title' => 'Cameras',
+		'show' => 'Render camera stream'
+	)
 );

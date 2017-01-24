@@ -48,18 +48,18 @@ return array(
 		'unblock' => 'Odblokovať tohto študenta',
 		'delete' => 'Vymazať tohto študenta'
 	),
-    'nav' => array(
-        'title' => 'VideoApp',
-        'manageUsers' => 'Správa študentov',
-        'lectures' => 'Správa prednášok',
-        'logout' => 'Odhlásiť sa',
-        'login' => 'Prihlásiť sa',
-        'settings' => 'Nastavenia',
-        'cameras' => 'Kamery'
-    ),
-    'cameras' => array(
-    	'single' => 'Kamera',
-    	'title' => 'Kamery',
-    	'show' => 'Zobraziť stream kamery'
-    )
+	'nav' => array(
+		'title' => 'VideoApp',
+		'manageUsers' => 'Správa študentov',
+		'lectures' => 'Správa prednášok',
+		'logout' => 'Odhlásiť sa',
+		'login' => 'Prihlásiť sa',
+		'settings' => 'Nastavenia',
+		'cameras' => 'Kamery'
+	),
+	'cameras' => array(
+		'single' => 'Kamera',
+		'title' => 'Kamery',
+		'show' => 'Zobraziť stream kamery'
+	)
 );
