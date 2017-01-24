@@ -36,6 +36,17 @@
 
 				<div class="row">
 					<div class="input-field col s12 m12 l12">
+					<select>
+						<option value="">Vyberte kameru</option>
+						<?php foreach ($cameras as $camera): ?>
+							<?php echo $camera->id ?>
+						<?php endforeach ?>
+					</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12 m12 l12">
 						<textarea id="note" name="note" class="materialize-textarea validate"></textarea>
 						<label for="note">Poznámka</label>
 					</div>

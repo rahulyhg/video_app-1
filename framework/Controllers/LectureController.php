@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\Lecture;
 use Models\Auth;
+use Models\Camera;
 
 use Core\Validator;
 use Core\Responder;
@@ -37,7 +38,10 @@ class LectureController {
 	 * @return view
 	 */
 	public static function create() {
-		render("lectures/create");
+		// get all the cameras
+		$cameras = Camera::all();
+
+		render("lectures/create", ["cameras" => $cameras]);
 	}
 
 	/**
