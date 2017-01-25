@@ -20,6 +20,6 @@
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
-	<!-- <script type="text/javascript">getTheCameraStream('<?php echo $camera["ip_address"] ?>');</script> -->
+	<script type="text/javascript"> checkStream(); </script>
 </body>
 </html>
