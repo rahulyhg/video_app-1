@@ -6,7 +6,7 @@ var loaded = false;
 
 // check the stream for errors
 var checkStream = function() {
-	setInterval(function() {
+	setTimeout(function() {
 		if (! $(imageStreamHolder)[0].complete) {
 			displayErrorStream();
 		}
