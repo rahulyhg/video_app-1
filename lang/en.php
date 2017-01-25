@@ -28,7 +28,8 @@ return array(
 		'number' => 'No.:',
 		'detail' => 'Detail',
 		'subscribe' => 'Subscribe',
-		'unsubscribe' => 'Unusbscribe'
+		'unsubscribe' => 'Unusbscribe',
+		'show' => 'Show the lecture'
 	),
 	'users' => array(
 		'detail' => 'Detail',

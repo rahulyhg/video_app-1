@@ -29,6 +29,7 @@
 						</div>
 						<div class="card-action">
 							<a href="<?php url('lecture/' . $lecture["id"]) ?>"><?php mutation("lectures.detail") ?></a>
+							<a href="<?php url('camera/' . $lecture["camera_id"]) ?>"><?php mutation("lectures.show") ?></a>
 						</div>
 					</div>
 				</div>

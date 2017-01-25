@@ -28,7 +28,8 @@ return array(
 		'number' => 'Č.:',
 		'detail' => 'Detail',
 		'subscribe' => 'Zapísať sa',
-		'unsubscribe' => 'Zrušiť zápis'
+		'unsubscribe' => 'Zrušiť zápis',
+		'show' => 'Prejsť na prednášku'
 	),
 	'users' => array(
 		'detail' => 'Detail',
