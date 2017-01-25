@@ -19,7 +19,7 @@ class CamerasController {
 	}
 
 	/**
-	 * Shows the stream of the specified camera
+	 * Shows the view with the stream of the specified camera.
 	 * 
 	 * @param  int $camera_id
 	 * @return view

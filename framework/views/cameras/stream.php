@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +14,12 @@
 			</div>
 		</div>
 
-		<div class="row" id="camera_stream_holder"></div>
+		<div class="row" id="camera_stream_holder">
+			<img src="<?php echo $camera["stream_address"] ?>" id="camera_stream">
+		</div>
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
-	<script type="text/javascript">getTheCameraStream('<?php echo $camera["ip_address"] ?>');</script>
+	<!-- <script type="text/javascript">getTheCameraStream('<?php echo $camera["ip_address"] ?>');</script> -->
 </body>
 </html>

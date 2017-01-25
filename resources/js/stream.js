@@ -17,7 +17,7 @@ var displayErrorStream = function() {
 var getTheCameraStream = function(url) {
 	var url = url.trim();
 	var streamUrl = "http://" + url;
-	var streamUrl = "https://google.com";
+	var streamUrl = "http://147.232.24.182/video.mjpg";
 
 	$.ajax({
 		type: 'GET',
