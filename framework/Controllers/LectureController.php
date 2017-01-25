@@ -24,7 +24,7 @@ class LectureController {
 	}
 
 	/**
-	 * Returns the dashboard for managing lectures
+	 * Returns the dashboard for managing lectures.
 	 * 
 	 * @return view
 	 */
@@ -33,7 +33,7 @@ class LectureController {
 	}
 
 	/**
-	 * Displays the form for creating a new lecture
+	 * Displays the form for creating a new lecture.
 	 * 
 	 * @return view
 	 */
@@ -45,7 +45,7 @@ class LectureController {
 	}
 
 	/**
-	 * Shows a single lecture with an id.
+	 * Shows a single lecture detail.
 	 * 
 	 * @return view
 	 */
@@ -58,7 +58,7 @@ class LectureController {
 	}
 
 	/**
-	 * Persists the created lecture into the database
+	 * Persists the created lecture into the database.
 	 * 
 	 * @return view
 	 */
