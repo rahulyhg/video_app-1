@@ -29,7 +29,7 @@ class CamerasController {
 		$camera = Camera::get("id", $camera_id);
 
 		// get the camera type and display the render page according to that attribute
-		if ($camera["type"] == "simple") {
+		if ($camera["type"] == "stream") {
 			// display the view with the camera stream
 			render("cameras/stream", ["camera" => $camera]);
 		} else {

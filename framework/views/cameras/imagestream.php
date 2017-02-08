@@ -20,6 +20,5 @@
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
-	<script type="text/javascript"> checkStream(); </script>
 </body>
 </html>
