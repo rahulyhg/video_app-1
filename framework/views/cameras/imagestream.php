@@ -14,11 +14,12 @@
 			</div>
 		</div>
 
-		<div class="row" id="camera_stream_holder">
-			<img src="<?php echo $camera["stream_address"] ?>" id="camera_stream">
+		<div class="row" id="image_stream_holder">
+			<img src="<?php echo $camera["stream_address"] ?>" id="image_stream">
 		</div>
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
+	<script type="text/javascript"> getIpAddress("<?php echo $camera["stream_address"]; ?>"); </script>
 </body>
 </html>
