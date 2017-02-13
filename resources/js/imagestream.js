@@ -37,8 +37,6 @@ var getCurrentTimestamp = function() {
 var updateImageStream = function(timestamp) {
 	var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
 	$(imageStreamHolder).attr("src", imgSrcAttribute);
-
-	console.log("updated");
 };
 
 // load the image for stream display in a loop and update the image
