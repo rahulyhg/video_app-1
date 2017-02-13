@@ -3,7 +3,7 @@
  */
 
 // interval setting (int [ms])
-var imageStreamInterval = 3000;
+var imageStreamInterval = 2000;
 
 // holder of the image stream
 var imageStreamHolder = "#image_stream";
@@ -37,10 +37,12 @@ var getCurrentTimestamp = function() {
 var updateImageStream = function(timestamp) {
 	var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
 	$(imageStreamHolder).attr("src", imgSrcAttribute);
+
+	console.log("updated");
 };
 
+// load the image for stream display in a loop and update the image
 $(document).ready(function() {
-	// load the image for stream display in a loop and update the image
 	setInterval(function() {
 		var timestamp = getCurrentTimestamp();
 		updateImageStream(timestamp);
