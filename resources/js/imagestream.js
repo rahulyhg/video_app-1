@@ -3,13 +3,17 @@
  */
 
 // interval setting (int [ms])
-var imageStreamInterval = 2000;
+var imageStreamInterval = 3000;
 
 // holder of the image stream
 var imageStreamHolder = "#image_stream";
 
 // stream address global variable
 var streamAddress = "";
+
+// Basic Auth credentials
+var httpBasicAuthUsername = "service";
+var httpBasicAuthPasword = "mac661959";
 
 /**
  * Assings the stream URL to a global variable.
@@ -35,6 +39,19 @@ var getCurrentTimestamp = function() {
  * @param  int timestamp
  */
 var updateImageStream = function(timestamp) {
+	$.ajax({
+		url: streamAddress,
+		username: httpBasicAuthUsername,
+		password: httpBasicAuthPasword,
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("Authorization", "Basic " + btoa(httpBasicAuthUsername + ":" + httpBasicAuthPasword));
+		},
+		success: function(response) {
+			var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
+			$(imageStreamHolder).attr("src", imgSrcAttribute);
+		}
+	});
+
 	var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
 	$(imageStreamHolder).attr("src", imgSrcAttribute);
 };
