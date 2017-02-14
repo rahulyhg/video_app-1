@@ -6,7 +6,8 @@
 var imageStreamInterval = 3000;
 
 // holder of the image stream
-var imageStreamHolder = "#image_stream";
+var streamImage = "#image_stream";
+var streamImageHolder = "#image_stream_holder";
 
 // stream address global variable
 var streamAddress = "";
@@ -40,20 +41,19 @@ var getCurrentTimestamp = function() {
  */
 var updateImageStream = function(timestamp) {
 	$.ajax({
-		url: streamAddress,
-		username: httpBasicAuthUsername,
-		password: httpBasicAuthPasword,
+		url: streamAddress + "?JpegCam=1&rnd=" + timestamp,
 		beforeSend: function(xhr) {
 			xhr.setRequestHeader("Authorization", "Basic " + btoa(httpBasicAuthUsername + ":" + httpBasicAuthPasword));
 		},
 		success: function(response) {
-			var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
-			$(imageStreamHolder).attr("src", imgSrcAttribute);
+			// prepare the new image
+			var newImage = new Image();
+			newImage.src = response;
+
+			// append the new image
+			$(image_stream_holder).empty().append(newImage);
 		}
 	});
-
-	var imgSrcAttribute = streamAddress + "?JpegCam=1&rnd=" + timestamp;
-	$(imageStreamHolder).attr("src", imgSrcAttribute);
 };
 
 // load the image for stream display in a loop and update the image
