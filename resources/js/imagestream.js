@@ -3,7 +3,10 @@
  */
 
 // interval setting (int [ms])
-var imageStreamInterval = 3000;
+var imageStreamInterval = 1500;
+
+// overlay setting for the camera
+var vcaOverlaySetting = 0;
 
 // holder of the image stream
 var streamImage = "#image_stream";
@@ -40,26 +43,13 @@ var getCurrentTimestamp = function() {
  * @param  int timestamp
  */
 var updateImageStream = function(timestamp) {
-	$.ajax({
-		url: streamAddress + "?JpegCam=1&rnd=" + timestamp,
-		beforeSend: function(xhr) {
-			xhr.setRequestHeader("Authorization", "Basic " + btoa(httpBasicAuthUsername + ":" + httpBasicAuthPasword));
-		},
-		success: function(response) {
-			// prepare the new image
-			var newImage = new Image();
-			newImage.src = response;
-
-			// append the new image
-			$(image_stream_holder).empty().append(newImage);
-		}
-	});
+	var imageUrl = streamAddress + "?JpegCam=1&VCAOverlay=" + vcaOverlaySetting + "&rnd=" + timestamp;
+	$(streamImage).attr("src", imageUrl);
 };
 
 // load the image for stream display in a loop and update the image
 $(document).ready(function() {
 	setInterval(function() {
-		var timestamp = getCurrentTimestamp();
-		updateImageStream(timestamp);
+		updateImageStream(getCurrentTimestamp());
 	}, imageStreamInterval);
 });
