@@ -3,11 +3,14 @@ var archiveVideoHolder = "#archive_camera_holder"
 var archiveImageHolder = "#archive_camera_stream";
 var archiveDatepickerHolder = ".archiveDatepicker";
 var archiveSliderHolder = "#archiveSlider";
-var currentTimestampOfTheVideo;
 
-// control butons placeholder
+// video playback placeholder variables
 var archivePlayButton = "#archive_play_button";
 var archivePauseButton = "#archive_pause_button";
+var achiveTimeHolder = "#achiveTimeFormatted";
+var currentTimestampOfTheVideo;
+var isVideoPlaying = false;
+var archiveImageStreamInterval = 1000; // ms
 
 /**
  * Player controls functions
@@ -15,11 +18,19 @@ var archivePauseButton = "#archive_pause_button";
 var playStream = function() {
 	$(archivePlayButton).hide();
 	$(archivePauseButton).show();
+
+	if (! isVideoPlaying) {
+		isVideoPlaying = true;
+	}
 };
 
 var pauseStream = function() {
 	$(archivePauseButton).hide();
 	$(archivePlayButton).show();
+
+	if (isVideoPlaying) {
+		isVideoPlaying = false;
+	}
 };
 
 /**
@@ -44,9 +55,22 @@ var changeStreamDate = function(date) {
  * @param  string timestamp
  */
 var loadFrame = function(timestamp) {
+	// console.log("video at timestamp: " + timestamp); // debug logging
+
 	// update the image output
 	var imageUrl = streamAddress + "?JpegCam=1&VCAOverlay=" + vcaOverlaySetting + "&rnd=" + timestamp;
 	$(archiveImageHolder).attr("src", imageUrl);
+
+	// update the slider and timer values
+	var date = new Date(timestamp * 1000);
+	var secondsInDay = (date.getHours() * 60 * 60) + (date.getMinutes() * 60) + date.getSeconds();
+	console.log(secondsInDay);
+	var timeFormatted = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	$(archiveSliderHolder).val(secondsInDay);
+	$(achiveTimeHolder).val(timeFormatted)
+
+	// add a second to the timestamp
+	++timestamp;
 
 	// update the global timestamp placeholder
 	currentTimestampOfTheVideo = timestamp;
@@ -64,13 +88,17 @@ $(document).ready(function() {
 	// changing the stream date
 	$(archiveDatepickerHolder).on("change", function(event) { changeStreamDate($(this).val()); });
 
-	// updating the image video stream in a loop here
+	// playing the video here
 	setInterval(function() {
-		loadFrame(currentTimestampOfTheVideo);
-	}, imageStreamInterval);
+		if (isVideoPlaying) {
+			loadFrame(currentTimestampOfTheVideo);
+		}
+	}, archiveImageStreamInterval);
 
-	// prepare the control functions
-	$(archivePlayButton).hide();
-	$(archivePauseButton).on("click", pauseStream());
-	$(archivePlayButton).on("click", playStream());
+	// hide the pause button on load
+	pauseStream();
 });
+
+// prepare the control functions
+$(document).on("click", archivePauseButton, pauseStream);
+$(document).on("click", archivePlayButton, playStream);
