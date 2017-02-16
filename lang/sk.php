@@ -30,7 +30,8 @@ return array(
 		'subscribe' => 'Zapísať sa',
 		'unsubscribe' => 'Zrušiť zápis',
 		'show' => 'Prejsť na prednášku',
-		'subscribed' => 'Zapísaní študenti'
+		'subscribed' => 'Zapísaní študenti',
+		'all' => 'Všetky prednášky'
 	),
 	'users' => array(
 		'detail' => 'Detail',

@@ -24,6 +24,19 @@ class LectureController {
 	}
 
 	/**
+	 * Displays a view with a list of all the lectures.
+	 * 
+	 * @return view
+	 */
+	public static function lecturelist() {
+		// get all the lectures
+		$lectures = Lecture::all();
+
+		// display the list view with the lectures
+		render("lectures/list", ["lectures" => $lectures]);
+	}
+
+	/**
 	 * Returns the dashboard for managing lectures.
 	 * 
 	 * @return view

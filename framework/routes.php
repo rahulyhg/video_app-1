@@ -103,6 +103,11 @@ $router->map('GET', '/lectures', function() {
     LectureController::index();
 });
 
+// display a list of all the lectures
+$router->map('GET', '/lectures/list', function() {
+    LectureController::lecturelist();
+});
+
 // get the lecture dashboard
 $router->map('GET', '/lecture', function() {
     redirectIfNotLoggedIn();

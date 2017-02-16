@@ -30,7 +30,8 @@ return array(
 		'subscribe' => 'Subscribe',
 		'unsubscribe' => 'Unusbscribe',
 		'show' => 'Show the lecture',
-		'subscribed' => 'Subscribed students'
+		'subscribed' => 'Subscribed students',
+		'all' => 'All lectures'
 	),
 	'users' => array(
 		'detail' => 'Detail',

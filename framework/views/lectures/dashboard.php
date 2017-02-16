@@ -20,6 +20,7 @@
 								<a href="<?php url('lecture/create') ?>"><?php mutation("lectures.create") ?></a>
 							<?php endif ?>
 							<a href="<?php url('user/' . getUser()["id"] . '/lectures') ?>"><?php mutation("lectures.showMy") ?></a>
+							<a href="<?php url('lectures/list') ?>"><?php mutation("lectures.all") ?></a>
 						<?php endif ?>
 					</div>
 				</div>
