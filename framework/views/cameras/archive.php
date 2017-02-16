@@ -27,7 +27,7 @@
 
 						<div class="row">
 							<div class="col s12 m12 l12">
-								<input type="range" id="test5" min="0" max="86400" />
+								<input type="range" id="archiveSlider" min="0" max="86400" />
 							</div>
 						</div>
 					</div>
@@ -42,5 +42,6 @@
 	</div>
 
 	<script src="<?php asset("js/app.min.js") ?>" type="text/javascript"></script>
+	<script type="text/javascript"> getIpAddress("<?php echo $camera["stream_address"]; ?>"); </script>
 </body>
 </html>
