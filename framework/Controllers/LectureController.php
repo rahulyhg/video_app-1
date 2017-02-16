@@ -52,9 +52,10 @@ class LectureController {
 	public static function show($id) {
 		// get the lecture
 		$lecture = Lecture::get("id", $id);
+		$users = Lecture::getUsers($lecture["id"]);
 
 		// render the view
-		render("lectures/show", ["lecture" => $lecture]);
+		render("lectures/show", ["lecture" => $lecture, "users" => $users]);
 	}
 
 	/**

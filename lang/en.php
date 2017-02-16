@@ -29,7 +29,8 @@ return array(
 		'detail' => 'Detail',
 		'subscribe' => 'Subscribe',
 		'unsubscribe' => 'Unusbscribe',
-		'show' => 'Show the lecture'
+		'show' => 'Show the lecture',
+		'subscribed' => 'Subscribed students'
 	),
 	'users' => array(
 		'detail' => 'Detail',

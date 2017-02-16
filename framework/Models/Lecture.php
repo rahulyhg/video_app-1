@@ -106,6 +106,27 @@ class Lecture {
 	}
 
 	/**
+	 * Get all the users for a specified lecture.
+	 * 
+	 * @param  int $lecture_id
+	 * @return array
+	 */
+	public static function getUsers($lecture_id) {
+		// get the db
+		global $app;
+		$db = $app->getDatabase();
+
+		// get all the records
+		$subscriptionRecords = $db->lecture_user()->where("lecture_id", $lecture_id);
+		$userIdsArray = array();
+		foreach ($subscriptionRecords as $record) {
+			array_push($userIdsArray, $record["user_id"]);
+		}
+		$users = $db->user()->where("id", $userIdsArray);
+		return $users;
+	}
+
+	/**
 	 * Get a specific lecture.
 	 * 
 	 * @param  int $user_id

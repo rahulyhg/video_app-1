@@ -29,7 +29,8 @@ return array(
 		'detail' => 'Detail',
 		'subscribe' => 'Zapísať sa',
 		'unsubscribe' => 'Zrušiť zápis',
-		'show' => 'Prejsť na prednášku'
+		'show' => 'Prejsť na prednášku',
+		'subscribed' => 'Zapísaní študenti'
 	),
 	'users' => array(
 		'detail' => 'Detail',
@@ -52,7 +53,7 @@ return array(
 	'nav' => array(
 		'title' => 'VideoApp',
 		'manageUsers' => 'Správa študentov',
-		'lectures' => 'Správa prednášok',
+		'lectures' => 'Prednášky',
 		'logout' => 'Odhlásiť sa',
 		'login' => 'Prihlásiť sa',
 		'settings' => 'Nastavenia',
