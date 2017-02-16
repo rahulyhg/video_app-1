@@ -62,6 +62,11 @@ return array(
 		'cameras' => 'Cameras',
 		'archive' => 'Archive'
 	),
+	'archive' => array(
+		'settings' => 'Archive settings',
+		'day' => 'Pick a day',
+		'timeSlider' => 'Time'
+	),
 	'cameras' => array(
 		'single' => 'Camera',
 		'title' => 'Cameras',

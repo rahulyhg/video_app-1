@@ -62,6 +62,11 @@ return array(
 		'cameras' => 'Kamery',
 		'archive' => 'Archív'
 	),
+	'archive' => array(
+		'settings' => 'Nastavenie archívu',
+		'day' => 'Vyberte si deň z archívu',
+		'timeSlider' => 'Čas'
+	),
 	'cameras' => array(
 		'single' => 'Kamera',
 		'title' => 'Kamery',

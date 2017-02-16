@@ -14,18 +14,30 @@
 		</div>
 
 		<div class="row">
-			<?php foreach ($cameras as $camera): ?>
-				<div class="col s12 m4 l4">
-					<div class="card blue-grey darken-1">
-						<div class="card-content white-text">
-							<span class="card-title truncate"><?php echo $camera["name"] ?></span>
+			<div class="col s12 m12 l12">
+				<div class="card">
+					<div class="card-content">
+						<h3><?php mutation("archive.settings") ?></h3>
+
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<input type="date" class="archiveDatepicker" id="date" name="date" placeholder="<?php mutation("archive.day") ?>">
+							</div>
 						</div>
-						<div class="card-action">
-							<a href="<?php url('camera/' . $camera["id"]) ?>"><?php mutation("cameras.show") ?></a>
+
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<input type="range" id="test5" min="0" max="86400" />
+							</div>
 						</div>
 					</div>
+					<div class="card-action"></div>
 				</div>
-			<?php endforeach ?>
+			</div>
+		</div>
+
+		<div class="row" id="archive_camera_holder">
+			<img src="<?php echo $camera["stream_address"] ?>" id="archive_camera_stream">
 		</div>
 	</div>
 

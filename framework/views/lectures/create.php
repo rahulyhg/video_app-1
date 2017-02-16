@@ -21,7 +21,7 @@
 
 				<div class="row">
 					<div class="col s12 m6 l6">
-						<input type="date" class="datepicker" id="date" name="date" placeholder="Dátum">
+						<input type="date" class="datepicker" id="date" name="date" placeholder="<?php mutation("archive.day") ?>">
 					</div>
 					<div class="col s12 m3 l3">
 						<label for="time">Čas začiatku</label>
