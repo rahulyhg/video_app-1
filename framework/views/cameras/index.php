@@ -7,8 +7,6 @@
 	<div class="container">
 		<?php insert("partials/nav") ?>
 
-		<?php insert("partials/buttons/_archiveButton") ?>
-
 		<div class="row">
 			<div class="col s12 m12 l12">
 				<h3><?php mutation("cameras.title") ?></h3>
@@ -25,6 +23,7 @@
 						</div>
 						<div class="card-action">
 							<a href="<?php url('camera/' . $camera["id"]) ?>"><?php mutation("cameras.show") ?></a>
+							<a href="<?php url('camera/' . $camera["id"] . '/archive') ?>"><?php mutation("nav.archive") ?></a>
 						</div>
 					</div>
 				</div>

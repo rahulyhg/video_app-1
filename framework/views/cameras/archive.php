@@ -14,7 +14,6 @@
 		</div>
 
 		<div class="row">
-
 			<?php foreach ($cameras as $camera): ?>
 				<div class="col s12 m4 l4">
 					<div class="card blue-grey darken-1">

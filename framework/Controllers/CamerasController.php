@@ -38,11 +38,18 @@ class CamerasController {
 	}
 
 	/**
-	 * Dsiplays the interface for showing the archive of cameras.
+	 * Displays the archive view for the speciied camera.
 	 * 
+	 * @param  int $camera_id
 	 * @return view
 	 */
-	public static function archive() {
-		render("cameras/archive");
+	public static function archive($camera_id) {
+		dd($camera_id);
+		// select all the cameras
+		$camera = Camera::get("id", $camera_id);
+		dd($camera);
+
+		// render the archive view with the camera
+		render("cameras/archive", ["camera" => $camera]);
 	}
 }
