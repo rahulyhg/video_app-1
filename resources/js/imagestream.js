@@ -47,6 +47,10 @@ var updateImageStream = function(timestamp) {
 	$(streamImage).attr("src", imageUrl);
 };
 
+var updateImageCallback = function(response) {
+	// console.log(response);
+};
+
 // load the image for stream display in a loop and update the image
 $(document).ready(function() {
 	setInterval(function() {
