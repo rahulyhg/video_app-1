@@ -24,20 +24,23 @@
 								<input type="date" class="archiveDatepicker" id="date" name="date" placeholder="<?php mutation("archive.day") ?>">
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col s12 m12 l12">
-								<input type="range" id="archiveSlider" min="0" max="86400" />
-							</div>
-						</div>
 					</div>
-					<div class="card-action"></div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row" id="archive_camera_holder">
-			<img src="<?php echo $camera["stream_address"] ?>" id="archive_camera_stream">
+			<div class="col s12 m12 l12">
+				<img src="<?php echo $camera["stream_address"] ?>" id="archive_camera_stream">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12 m12 l12 center-align">
+				<i class="material-icons archive_button" id="archive_play_button">play_circle_outline</i>
+				<i class="material-icons archive_button" id="archive_pause_button">pause_circle_outline</i>
+				<input type="range" id="archiveSlider" min="0" max="86400" value="0" />
+			</div>
 		</div>
 	</div>
 

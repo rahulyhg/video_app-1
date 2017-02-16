@@ -5,6 +5,23 @@ var archiveDatepickerHolder = ".archiveDatepicker";
 var archiveSliderHolder = "#archiveSlider";
 var currentTimestampOfTheVideo;
 
+// control butons placeholder
+var archivePlayButton = "#archive_play_button";
+var archivePauseButton = "#archive_pause_button";
+
+/**
+ * Player controls functions
+ */
+var playStream = function() {
+	$(archivePlayButton).hide();
+	$(archivePauseButton).show();
+};
+
+var pauseStream = function() {
+	$(archivePauseButton).hide();
+	$(archivePlayButton).show();
+};
+
 /**
  * Changes the date of the stream.
  * 
@@ -51,4 +68,9 @@ $(document).ready(function() {
 	setInterval(function() {
 		loadFrame(currentTimestampOfTheVideo);
 	}, imageStreamInterval);
+
+	// prepare the control functions
+	$(archivePlayButton).hide();
+	$(archivePauseButton).on("click", pauseStream());
+	$(archivePlayButton).on("click", playStream());
 });

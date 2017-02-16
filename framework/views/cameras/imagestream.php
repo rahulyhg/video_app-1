@@ -15,7 +15,9 @@
 		</div>
 
 		<div class="row" id="image_stream_holder">
-			<img src="<?php echo $camera["stream_address"] ?>" id="image_stream">
+			<div class="col s12 m12 l12">
+				<img src="<?php echo $camera["stream_address"] ?>" id="image_stream">
+			</div>
 		</div>
 	</div>
 
