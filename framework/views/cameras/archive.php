@@ -9,7 +9,7 @@
 
 		<div class="row">
 			<div class="col s12 m12 l12">
-				<h3><?php mutation("cameras.title") ?></h3>
+				<h3><?php mutation("nav.archive") ?></h3>
 			</div>
 		</div>
 

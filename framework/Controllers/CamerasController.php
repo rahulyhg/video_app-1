@@ -44,10 +44,11 @@ class CamerasController {
 	 * @return view
 	 */
 	public static function archive($camera_id) {
-		dd($camera_id);
 		// select all the cameras
 		$camera = Camera::get("id", $camera_id);
-		dd($camera);
+		if (!$camera) {
+			self::index();
+		}
 
 		// render the archive view with the camera
 		render("cameras/archive", ["camera" => $camera]);
