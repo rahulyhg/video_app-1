@@ -33,7 +33,7 @@
 			<div class="col s12 m12 l12">
 				<div class="card">
 					<div class="card-content">
-						<h3><?php mutation("lectures.subscribed") ?></h3>
+						<h3><?php mutation("lectures.subscribed") ?> <?php echo "(" . count($users) . ")" ?></h3>
 
 						<div class="row">
 							<?php foreach ($users as $user): ?>
