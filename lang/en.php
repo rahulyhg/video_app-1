@@ -20,6 +20,7 @@ return array(
 	),
 	'lectures' => array(
 		'heading' => 'Lectures',
+		'list' => 'List of all lectures',
 		'info' => 'This interface allows you to view, manage and create new lectures',
 		'create' => 'Add a Lecture',
 		'showMy' => 'My lectures',

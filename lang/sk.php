@@ -20,6 +20,7 @@ return array(
 	),
 	'lectures' => array(
 		'heading' => 'Prednášky',
+		'list' => 'List všetkých prednášok',
 		'info' => 'V tomto rozhraní môžete sledovať, spravovať a vytvárať prednášky',
 		'create' => 'Nová prednáška',
 		'showMy' => 'Moje prednášky',

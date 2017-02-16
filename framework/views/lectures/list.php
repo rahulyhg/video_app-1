@@ -8,28 +8,26 @@
 		<?php insert("partials/nav") ?>
 
 		<div class="row">
-			<?php mutation("lectures.heading") ?>
-		</div>
-
-		<div class="row">
-			<h4><?php mutation("lectures.noSubscriptions") ?></h4>
+			<h3><?php mutation("lectures.list") ?></h3>
 
 			<div class="row">
 				<?php foreach ($lectures as $lecture): ?>
-					<div class="col s12 m6 l4">
-						<div class="card-panel grey lighten-5 z-depth-1">
-							<div class="row valign-wrapper">
-								<div class="col s2">
-									<i class="material-icons left">library_books</i>
-								</div>
-								<div class="col s10">
-									<span class="black-text concat">
-										<?php echo $lecture["title"] ?>
-									</span>
+					<a href="<?php url('lecture/' . $lecture["id"]) ?>">
+						<div class="col s12 m6 l6">
+							<div class="card-panel grey lighten-5 z-depth-1">
+								<div class="row valign-wrapper">
+									<div class="col s2">
+										<i class="material-icons left">library_books</i>
+									</div>
+									<div class="col s10">
+										<span class="black-text truncate">
+											<?php echo $lecture["title"] ?>
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				<?php endforeach ?>
 			</div>
 		</div>
