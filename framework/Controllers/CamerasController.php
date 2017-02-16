@@ -36,4 +36,13 @@ class CamerasController {
 			render("cameras/imagestream", ["camera" => $camera]);
 		}
 	}
+
+	/**
+	 * Dsiplays the interface for showing the archive of cameras.
+	 * 
+	 * @return view
+	 */
+	public static function archive() {
+		render("cameras/archive");
+	}
 }

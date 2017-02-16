@@ -56,7 +56,8 @@ return array(
 		'logout' => 'Odhlásiť sa',
 		'login' => 'Prihlásiť sa',
 		'settings' => 'Nastavenia',
-		'cameras' => 'Kamery'
+		'cameras' => 'Kamery',
+		'archive' => 'Archív'
 	),
 	'cameras' => array(
 		'single' => 'Kamera',

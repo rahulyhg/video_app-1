@@ -7,8 +7,6 @@
 	<div class="container">
 		<?php insert("partials/nav") ?>
 
-		<?php insert("partials/buttons/_archiveButton") ?>
-
 		<div class="row">
 			<div class="col s12 m12 l12">
 				<h3><?php mutation("cameras.title") ?></h3>

@@ -150,6 +150,9 @@ $router->map('GET', '/cameras', function () {
 $router->map('GET', '/camera/[i:camera_id]', function ($camera_id) {
     CamerasController::show($camera_id);
 });
+$router->map('GET', '/archive', function() {
+    CamerasController::archive();
+});
 
 // handle route matches
 $match = $router->match();

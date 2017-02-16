@@ -56,7 +56,8 @@ return array(
 		'logout' => 'Logout',
 		'login' => 'Login',
 		'settings' => 'Settings',
-		'cameras' => 'Cameras'
+		'cameras' => 'Cameras',
+		'archive' => 'Archive'
 	),
 	'cameras' => array(
 		'single' => 'Camera',
