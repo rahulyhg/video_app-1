@@ -43,7 +43,9 @@ var pauseStream = function() {
  */
 var changeStreamDate = function(date) {
 	// convert the date to timestamp
-	var timestamp = new Date(date).getTime() / 1000;
+	var theDate = new Date(date);
+	theDate.setHours(7);
+	var timestamp = theDate.getTime() / 1000;
 
 	// pause the playback on load of a new date
 	pauseStream();
@@ -120,7 +122,9 @@ $(document).ready(function() {
 	});
 
 	// changing the stream date
-	$(archiveDatepickerHolder).on("change", function(event) { changeStreamDate($(this).val()); });
+	$(archiveDatepickerHolder).on("change", function(event) {
+		changeStreamDate($(this).val());
+	});
 
 	// playing the video here
 	setInterval(function() {
