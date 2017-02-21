@@ -13,7 +13,7 @@ var isVideoPlaying = false;
 var archiveImageStreamInterval = 1000; // [ms] / 1000 = [s]
 
 /**
- * Player controls functions.
+ * Plays / resumes the video stream.
  */
 var playStream = function() {
 	$(archivePlayButton).hide();
@@ -140,3 +140,15 @@ $(document).ready(function() {
 // prepare the control functions
 $(document).on("click", archivePauseButton, pauseStream);
 $(document).on("click", archivePlayButton, playStream);
+$(document).on("change", archiveSliderHolder, function() {
+	// calculate the timestamp based on slider position and date
+	var dateTimeStamp = $(archiveDatepickerHolder).val();
+	var theDate = new Date(dateTimeStamp);
+	theDate = theDate.setHours(0);
+	var timestamp = + theDate.getTime() / 1000;
+	// seconds of the day
+	var sliderValueSeconds = + $(this).val();
+
+	// change the current timestamp forcefuly here to allow for dynamic playback
+	currentTimestampOfTheVideo = timestamp + sliderValueSeconds;
+});
