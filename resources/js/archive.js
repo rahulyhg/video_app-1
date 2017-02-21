@@ -13,7 +13,7 @@ var isVideoPlaying = false;
 var archiveImageStreamInterval = 1000; // ms
 
 /**
- * Player controls functions
+ * Player controls functions.
  */
 var playStream = function() {
 	$(archivePlayButton).hide();
@@ -24,6 +24,9 @@ var playStream = function() {
 	}
 };
 
+/**
+ * Pauses the achive video player stream.
+ */
 var pauseStream = function() {
 	$(archivePauseButton).hide();
 	$(archivePlayButton).show();
