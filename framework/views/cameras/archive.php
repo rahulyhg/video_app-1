@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="col s12 m6 l6 center-align">
-				<input type="text" id="achiveTimeFormatted" class="disabled" disabled>
+				<input type="text" id="achiveTimeFormatted" disabled>
 			</div>
 		</div>
 	</div>

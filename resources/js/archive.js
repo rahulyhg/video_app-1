@@ -10,7 +10,7 @@ var archivePauseButton = "#archive_pause_button";
 var achiveTimeHolder = "#achiveTimeFormatted";
 var currentTimestampOfTheVideo;
 var isVideoPlaying = false;
-var archiveImageStreamInterval = 1000; // ms
+var archiveImageStreamInterval = 1000; // [ms] / 1000 = [s]
 
 /**
  * Player controls functions.
@@ -45,11 +45,40 @@ var changeStreamDate = function(date) {
 	// convert the date to timestamp
 	var timestamp = new Date(date).getTime() / 1000;
 
+	// pause the playback on load of a new date
+	pauseStream();
+
 	// update the video
 	loadFrame(timestamp);
 
+	// set the current timestamp of video to the selected dates timestamp
+	currentTimestampOfTheVideo = timestamp;
+
 	// reset the timer slider
 	$(archiveSliderHolder).val(0);
+};
+
+/**
+ * Formats the time to a human readable format
+ * @param  {int} date
+ * @return {int}
+ */
+var formatTime = function(date) {
+	var seconds = date.getSeconds();
+	var minutes = date.getMinutes();
+	var hours = date.getHours();
+
+	if (seconds < 10) {
+		seconds = "0" + seconds;
+	}
+	if (minutes < 10) {
+		minutes = "0" + minutes;
+	}
+	if (hours < 10) {
+		hours = "0" + hours;
+	}
+
+	return hours + ":" + minutes + ":" + seconds;
 };
 
 /**
@@ -58,19 +87,20 @@ var changeStreamDate = function(date) {
  * @param  string timestamp
  */
 var loadFrame = function(timestamp) {
-	// console.log("video at timestamp: " + timestamp); // debug logging
-
 	// update the image output
 	var imageUrl = streamAddress + "?JpegCam=1&VCAOverlay=" + vcaOverlaySetting + "&rnd=" + timestamp;
 	$(archiveImageHolder).attr("src", imageUrl);
 
-	// update the slider and timer values
+	// reassign the date to javascipt readable object
 	var date = new Date(timestamp * 1000);
-	var secondsInDay = (date.getHours() * 60 * 60) + (date.getMinutes() * 60) + date.getSeconds();
-	console.log(secondsInDay);
-	var timeFormatted = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-	$(archiveSliderHolder).val(secondsInDay);
+
+	// calculate and visualize the elapsed time
+	var timeFormatted = formatTime(date);
 	$(achiveTimeHolder).val(timeFormatted)
+
+	// calculate and update the slider with the correct value
+	var secondsInDay = (date.getHours() * 60 * 60) + (date.getMinutes() * 60) + date.getSeconds();
+	$(archiveSliderHolder).val(secondsInDay);
 
 	// add a second to the timestamp
 	++timestamp;
@@ -85,7 +115,8 @@ $(document).ready(function() {
 	$(archiveDatepickerHolder).pickadate({
 		format: 'yyyy-mm-dd',
 		selectMonths: true,
-		selectYears: 15
+		selectYears: 15,
+		max: true
 	});
 
 	// changing the stream date
