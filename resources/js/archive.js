@@ -144,7 +144,6 @@ $(document).on("change", archiveSliderHolder, function() {
 	// calculate the timestamp based on slider position and date
 	var dateTimeStamp = $(archiveDatepickerHolder).val();
 	var theDate = new Date(dateTimeStamp);
-	theDate = theDate.setHours(0);
 	var timestamp = + theDate.getTime() / 1000;
 	// seconds of the day
 	var sliderValueSeconds = + $(this).val();
