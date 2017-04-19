@@ -1,5 +1,10 @@
 {
   "name": "video-app",
+  "scripts": {
+  	"serve": "php -S localhost:4000 -t .",
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
