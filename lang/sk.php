@@ -16,7 +16,8 @@ return array(
 		
 	),
 	'buttons' => array(
-		'addNewUser' => 'Pridať nového študenta'
+		'addNewUser' => 'Pridať nového študenta',
+		'addNewCamera' => 'Pridať novú kameru'
 	),
 	'lectures' => array(
 		'heading' => 'Prednášky',
@@ -70,6 +71,10 @@ return array(
 	'cameras' => array(
 		'single' => 'Kamera',
 		'title' => 'Kamery',
-		'show' => 'Zobraziť stream kamery'
+		'show' => 'Zobraziť stream kamery',
+		'create' => 'Nová kamera',
+		'name' => 'Meno kamery',
+		'address' => 'Adresa',
+		'save' => 'Uložiť kameru'
 	)
 );

@@ -158,6 +158,16 @@ $router->map('GET', '/camera/[i:camera_id]', function ($camera_id) {
 $router->map('GET', '/camera/[i:camera_id]/archive', function($camera_id) {
     CamerasController::archive($camera_id);
 });
+$router->map('GET', '/cameras/create', function () {
+    redirectIfNotAdmin();
+
+    CamerasController::create();
+});
+$router->map('POST', '/cameras', function () {
+    redirectIfNotAdmin();
+
+    CamerasController::store($_POST);
+});
 
 // handle route matches
 $match = $router->match();

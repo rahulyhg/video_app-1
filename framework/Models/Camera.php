@@ -50,4 +50,34 @@ class Camera {
 			return false;
 		}
 	}
+
+	/**
+	 * Stores the camera into database.
+	 * 
+	 * @param  array $data
+	 * @return boolean
+	 */
+	public static function store($data) {
+		global $app;
+		$db = $app->getDatabase();
+
+		// prepare the data
+		$cameraData = [
+			"name" => $data["name"],
+			"stream_address" => $data["stream_address"]
+		];
+
+		// insert data into the database
+		try {
+			$cameras = $db->camera();
+			$result = $cameras->insert($cameraData);
+
+			if ($result) {
+				return true;
+			}
+			return false;
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
 }

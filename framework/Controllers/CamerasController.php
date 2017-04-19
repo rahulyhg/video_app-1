@@ -38,6 +38,32 @@ class CamerasController {
 	}
 
 	/**
+	 * Displays the view for creating new cameras.
+	 * 
+	 * @return view
+	 */
+	public static function create() {
+		render("cameras/create");
+	}
+
+	/**
+	 * Persists the newly created camera to the database.
+	 * 
+	 * @param  array $data
+	 * @return view
+	 */
+	public static function store($data) {
+		// store into database
+		$record = Camera::store($data);
+
+		if ($record) {
+			// return back to lectures dashboard
+			redirect('cameras');
+		}
+		redirect('/lecture');
+	}
+
+	/**
 	 * Displays the archive view for the speciied camera.
 	 * 
 	 * @param  int $camera_id

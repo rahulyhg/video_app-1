@@ -14,6 +14,12 @@
 		</div>
 
 		<div class="row">
+			<div class="col s12 m12 l12">
+				<?php insert("partials/buttons/_newCamera") ?>
+			</div>
+		</div>
+
+		<div class="row">
 
 			<?php foreach ($cameras as $camera): ?>
 				<div class="col s12 m4 l4">

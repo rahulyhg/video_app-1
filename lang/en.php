@@ -16,7 +16,8 @@ return array(
 		'login' => 'Login',
 	),
 	'buttons' => array(
-		'addNewUser' => 'Add a new student'
+		'addNewUser' => 'Add a new student',
+		'addNewCamera' => 'Add a new camera'
 	),
 	'lectures' => array(
 		'heading' => 'Lectures',
@@ -70,6 +71,10 @@ return array(
 	'cameras' => array(
 		'single' => 'Camera',
 		'title' => 'Cameras',
-		'show' => 'Render camera stream'
+		'show' => 'Render camera stream',
+		'create' => 'New Camera',
+		'name' => 'Title',
+		'address' => 'Address',
+		'save' => 'Save camera'
 	)
 );
