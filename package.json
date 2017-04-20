@@ -2,7 +2,7 @@
   "name": "video-app",
   "scripts": {
   	"serve": "php -S localhost:4000 -t .",
-    "build": "gulp",
+    "build": "gulp build",
     "watch": "gulp watch"
   },
   "dependencies": {

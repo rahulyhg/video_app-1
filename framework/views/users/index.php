@@ -26,6 +26,7 @@
 						</div>
 						<div class="card-action">
 							<a href="<?php url('user/' . $user["id"]) ?>"><?php mutation("users.detail") ?></a>
+							<a href="#">ADMIN</a>
 						</div>
 					</div>
 				</div>				
