@@ -26,7 +26,10 @@
 						</div>
 						<div class="card-action">
 							<a href="<?php url('user/' . $user["id"]) ?>"><?php mutation("users.detail") ?></a>
-							<a href="#">ADMIN</a>
+
+							<?php if ($user["access_level"] == 1): ?>
+								<span href="#" style="color: #64ffda;">ADMIN</span>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>				

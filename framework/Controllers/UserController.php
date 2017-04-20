@@ -18,16 +18,8 @@ class UserController {
 		// get all the users
 		$users = User::all();
 
-		// display only admins
-		$usersToDisplay = array();
-		foreach ($users as $user) {
-			if ( ! isAdmin($user["id"]) ) {
-				array_push($usersToDisplay, $user);
-			}
-		}
-
 		// render the view with all the users
-		render("users/index", ["users" => $usersToDisplay]);
+		render("users/index", ["users" => $users]);
 	}
 
 	/**
