@@ -17,7 +17,8 @@ return array(
 	),
 	'buttons' => array(
 		'addNewUser' => 'Pridať nového študenta',
-		'addNewCamera' => 'Pridať novú kameru'
+		'addNewCamera' => 'Pridať novú kameru',
+		'addNewAdmin' => 'Pridať nového admina'
 	),
 	'lectures' => array(
 		'heading' => 'Prednášky',
@@ -43,6 +44,7 @@ return array(
 		'description' => 'Poznámka',
 		'submit' => 'Prihlásiť sa',
 		'registerHeading' => 'Registovať nového študenta',
+		'registerAdminHeading' => 'Registrovať nového admina',
 		'registerSubmit' => 'Registrovať',
 		'settingsHeading' => 'Užívateľské nastavenia',
 		'changeLanguage' => 'Zmena jazyka',
@@ -55,7 +57,7 @@ return array(
 	),
 	'nav' => array(
 		'title' => 'VideoApp',
-		'manageUsers' => 'Správa študentov',
+		'manageUsers' => 'Správa užívateľov',
 		'lectures' => 'Prednášky',
 		'logout' => 'Odhlásiť sa',
 		'login' => 'Prihlásiť sa',

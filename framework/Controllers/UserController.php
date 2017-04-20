@@ -105,7 +105,10 @@ class UserController {
 	}
 
 	/**
-	 * Attempts to log the user in
+	 * Attempts to log the user in.
+	 * 
+	 * @param  array $credentials
+	 * @return view
 	 */
 	public static function login($credentials) {
 		// attempt to log the user in

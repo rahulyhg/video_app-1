@@ -17,7 +17,8 @@ return array(
 	),
 	'buttons' => array(
 		'addNewUser' => 'Add a new student',
-		'addNewCamera' => 'Add a new camera'
+		'addNewCamera' => 'Add a new camera',
+		'addNewAdmin' => 'Add a new admin'
 	),
 	'lectures' => array(
 		'heading' => 'Lectures',
@@ -43,6 +44,7 @@ return array(
 		'description' => 'Description',
 		'submit' => 'Login',
 		'registerHeading' => 'Register A New Student',
+		'registerAdminHeading' => 'Register A New Admin',
 		'registerSubmit' => 'Register',
 		'settingsHeading' => 'Settings',
 		'changeLanguage' => 'Change language',
@@ -55,7 +57,7 @@ return array(
 	),
 	'nav' => array(
 		'title' => 'VideoApp',
-		'manageUsers' => 'Manage Students',
+		'manageUsers' => 'Manage Users',
 		'lectures' => 'Lectures',
 		'logout' => 'Logout',
 		'login' => 'Login',

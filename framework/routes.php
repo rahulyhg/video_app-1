@@ -6,6 +6,7 @@ use Controllers\PagesController;
 use Controllers\UserController;
 use Controllers\LectureController;
 use Controllers\CamerasController;
+use Controllers\AdminController;
 
 use Models\Auth;
 use Core\Middleware;
@@ -92,6 +93,16 @@ $router->map('GET', '/users', function() {
 $router->map('POST', '/register', function() {
     redirectIfNotAdmin();
     UserController::create($_POST);
+});
+// render a view with a form to create a new admin
+$router->map('GET', '/admin/create', function() {
+    redirectIfNotAdmin();
+    AdminController::create();
+});
+
+$router->map('POST', '/admin', function() {
+    redirectIfNotAdmin();
+    AdminController::store($_POST);
 });
 
 

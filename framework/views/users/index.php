@@ -8,8 +8,11 @@
 		<?php insert("partials/nav") ?>
 
 		<div class="row">
-			<div class="col s12 m12 l12">
+			<div class="col s6 m6 l6">
 				<?php insert("partials/buttons/_newUser") ?>
+			</div>
+			<div class="col s6 m6 l6">
+				<?php insert("partials/buttons/_newAdmin") ?>
 			</div>
 		</div>
 

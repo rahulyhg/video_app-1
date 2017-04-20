@@ -27,6 +27,12 @@ class User {
 		global $app;
 		$db = $app->getDatabase();
 
+		// specify the access level
+		$access_level = 0;
+		if ($credentials["access_level"] == 1) {
+			$access_level = 1;
+		}
+
 		// store user in the database
 		try {
 			$users = $db->user();
@@ -34,7 +40,7 @@ class User {
 				"email" => $credentials["email"],
 				"password" => password_hash($credentials["password"], PASSWORD_BCRYPT),
 				"description" => $credentials["description"],
-				"access_level" => 0
+				"access_level" => $access_level
 			]);
 			return true;
 		} catch (PDOException $e) {
