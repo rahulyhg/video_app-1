@@ -50,10 +50,10 @@ return array(
 		'changeLanguage' => 'Zmena jazyka',
 		'languages' => 'Jazyky',
 		'showUser' => 'Užívateľ:',
-		'seeSubscription' => 'Pozrieť si zapísané prednášky študenta',
-		'block' => 'Zablokovať tohto študenta',
-		'unblock' => 'Odblokovať tohto študenta',
-		'delete' => 'Vymazať tohto študenta'
+		'seeSubscription' => 'Pozrieť si zapísané prednášky užívateľa',
+		'block' => 'Zablokovať tohto užívateľa',
+		'unblock' => 'Odblokovať tohto užívateľa',
+		'delete' => 'Vymazať tohto užívateľa'
 	),
 	'nav' => array(
 		'title' => 'VideoApp',

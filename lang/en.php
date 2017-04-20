@@ -51,8 +51,8 @@ return array(
 		'languages' => 'Languages',
 		'showUser' => 'Student:',
 		'seeSubscription' => 'See user\'s lecture subscriptions',
-		'block' => 'Block this student',
-		'unblock' => 'Un-block this student',
+		'block' => 'Block this user',
+		'unblock' => 'Un-block this user',
 		'delete' => 'Delete this user'
 	),
 	'nav' => array(
