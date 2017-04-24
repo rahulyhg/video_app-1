@@ -88,6 +88,7 @@ class Camera {
 	 * @return void
 	 */
 	public static function delete($id) {
+		return $id;
 		// get the user
 		$camera = self::get("id", $id);
 

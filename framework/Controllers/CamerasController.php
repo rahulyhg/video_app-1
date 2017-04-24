@@ -71,7 +71,7 @@ class CamerasController {
 	 */
 	public static function delete($camera_id) {
 		// delete the camera
-		$cameraToBeDeleted = Camera::get("id", $id);
+		$cameraToBeDeleted = Camera::get("id", $camera_id);
 		if ($cameraToBeDeleted) {
 			Camera::delete($cameraToBeDeleted["id"]);
 		}
