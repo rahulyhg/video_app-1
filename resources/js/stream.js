@@ -10,7 +10,7 @@ var checkStream = function() {
 		if (! $(streamHolder)[0].complete) {
 			displayErrorStream();
 		}
-	}, 5000);
+	}, 20000);
 };
 
 // displays the error stream
