@@ -64,7 +64,8 @@ class Camera {
 		// prepare the data
 		$cameraData = [
 			"name" => $data["name"],
-			"stream_address" => $data["stream_address"]
+			"stream_address" => $data["stream_address"],
+			"type" => $data["type"]
 		];
 
 		// insert data into the database

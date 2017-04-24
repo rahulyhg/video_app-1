@@ -26,6 +26,15 @@
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="input-field col s12 m12 l12">
+						<select id="type" name="type" class="browser-default">
+							<option value="image">image</option>
+							<option value="stream">stream</option>
+						</select>
+					</div>
+				</div>
+
 				<div class="col s12 m12 l12 offset-m5 offset-l5">
 					<button class="waves-effect waves-light btn" type="submit"><?php mutation("cameras.save") ?></button>
 				</div>
