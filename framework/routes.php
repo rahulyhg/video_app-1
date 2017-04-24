@@ -179,6 +179,11 @@ $router->map('POST', '/cameras', function () {
 
     CamerasController::store($_POST);
 });
+$router->map('GET', '/camera/delete/[i:id]', function ($camera_id) {
+    redirectIfNotAdmin();
+
+    CamerasController::delete($camera_id);
+});
 
 // handle route matches
 $match = $router->match();

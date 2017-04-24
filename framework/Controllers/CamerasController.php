@@ -64,6 +64,23 @@ class CamerasController {
 	}
 
 	/**
+	 * Delets a specified camera.
+	 * 
+	 * @param  int $camera_id
+	 * @return void
+	 */
+	public static function delete($camera_id) {
+		// delete the camera
+		$cameraToBeDeleted = Camera::get("id", $id);
+		if ($cameraToBeDeleted) {
+			Camera::delete($cameraToBeDeleted["id"]);
+		}
+
+		// redirect back to index of users
+		self::index();
+	}
+
+	/**
 	 * Displays the archive view for the speciied camera.
 	 * 
 	 * @param  int $camera_id

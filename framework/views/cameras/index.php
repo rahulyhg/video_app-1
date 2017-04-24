@@ -30,6 +30,7 @@
 						<div class="card-action">
 							<a href="<?php url('camera/' . $camera["id"]) ?>"><?php mutation("cameras.show") ?></a>
 							<a href="<?php url('camera/' . $camera["id"] . '/archive') ?>"><?php mutation("nav.archive") ?></a>
+							<a href="<?php url('camera/delete/' . $camera["id"]) ?>">delete</a>
 						</div>
 					</div>
 				</div>

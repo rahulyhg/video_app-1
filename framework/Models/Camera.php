@@ -80,4 +80,19 @@ class Camera {
 			return false;
 		}
 	}
+
+	/**
+	 * Deletes a record of teh camera from the database.
+	 * 
+	 * @param  int $id
+	 * @return void
+	 */
+	public static function delete($id) {
+		// get the user
+		$camera = self::get("id", $id);
+
+		// delete the camera
+		$camera->delete();
+		return true;
+	}
 }
