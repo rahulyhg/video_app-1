@@ -68,7 +68,9 @@ Inicializuje novú inštanciu aplikácie.
 
 ##### `setLocale`
 Nastaví jazyk aplikácie zo session aplikácie.
+
 @parametre: `string $language (jazyk)`
+
 @výstup: `void`
 
 ##### `framework\Core\Middleware.php`
