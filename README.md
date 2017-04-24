@@ -11,3 +11,50 @@
 * `gulp watch` for development watching of resources
 * enable rewrite module in your server's engine config
 * ready!
+
+
+## Technická dokumentácia
+
+### Nastavenia
+Nastavenia aplikácie môžete nájsť v priečinku `config`. Jednotlivé nastavenia sú nasledovné:
+
+#### `config/database.php`
+Nastavenie databázy
+
+#### `config/database.php`
+Nastavenia jazykov aplikácie.
+
+### API aplikácie
+API sa riadi REST architektúrou. V nasledujúcej sekcii sa nachádza prehľad všetkých koncových bodov aplikácie.
+
+#### Middleware-y
+##### `redirectIfNotAdmin`
+Ak užívateľ nemá admin privilégia, na daný koncový bod sa nedostane.
+
+##### `redirectIfNotLoggedIn`
+Ak užívateľ nie je prihlásený, na daný koncový bod sa nedostane.
+
+#### Koncové body užívateľov
+
+##### `GET @ /` => `PagesController::index()`
+Domovská stránka aplikácie.
+
+##### `GET @ /register` => `PagesController::register()`
+Middleware: `redirectIfNotAdmin()`
+
+##### `GET @ /login` => `PagesController::login()`
+Zobrazí stránku pre prihlásenie užívateľa.
+
+##### `GET @ /logout` => `PagesController::logout()`
+Odhlási užívateľa.
+
+#### Koncové body prednášok
+
+##### `GET @ /lecture/create` => `PagesController::logout()`
+Middleware: `redirectIfNotLoggedIn()`
+            `redirectIfNotAdmin()`
+Zobrazí formu pre vytvorenie novej prednášky.
+
+
+
+
