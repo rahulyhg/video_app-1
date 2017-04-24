@@ -10,6 +10,8 @@ use NotORM;
 class App {
     /**
      * Bootstraps the application.
+     * 
+     * @return void
      */
     public function bootstrap() {
         // start the session
@@ -80,6 +82,7 @@ class App {
      * Sets the language from session on start of the application.
      * 
      * @param string $language
+     * @return void
      */
     public function setLocale($language = "sk") {
         $_SESSION["language"] = $language;

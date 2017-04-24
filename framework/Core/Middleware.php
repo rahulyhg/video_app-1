@@ -27,6 +27,9 @@ class Middleware {
 
 	/**
 	 * Returns true if the user is blocked
+	 * 
+	 * @param  int  $id
+	 * @return boolean
 	 */
 	public static function isUserBlocked($id) {
 		$user = User::get("id", $id);

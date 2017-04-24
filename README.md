@@ -24,6 +24,8 @@ Nastavenie databázy
 #### `config/database.php`
 Nastavenia jazykov aplikácie.
 
+---
+
 ### API aplikácie
 API sa riadi REST architektúrou. V nasledujúcej sekcii sa nachádza prehľad všetkých koncových bodov aplikácie.
 
@@ -55,6 +57,22 @@ Middleware: `redirectIfNotLoggedIn()`
             `redirectIfNotAdmin()`
 Zobrazí formu pre vytvorenie novej prednášky.
 
+---
 
+#### Chod aplikácie
+V tejto sekcii sú zdokumentované triedy, ktoré sa starajú o bezpečný chod aplikácie.
 
+##### `framework\Core\App.php`
+###### `bootstrap`
+Inicializuje novú inštanciu aplikácie.
 
+##### `setLocale`
+Nastaví jazyk aplikácie zo session aplikácie.
+@parametre: `string $language (jazyk)`
+@výstup: `void`
+
+##### `framework\Core\Middleware.php`
+##### `isUserBlocked`
+Vráti `true` ak je uživateľ prihlásený
+@parametre: `int $id`
+@výstup: `boolean`
