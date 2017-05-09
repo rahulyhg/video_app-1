@@ -61,7 +61,8 @@ var changeStreamDate = function(date) {
 };
 
 /**
- * Formats the time to a human readable format
+ * Formats the time to a human readable format.
+ * 
  * @param  {int} date
  * @return {int}
  */
