@@ -22,8 +22,14 @@
 		<div class="row">
 
 			<?php foreach ($cameras as $camera): ?>
+				<?php
+					$disabledClass = "";
+					if ($camera["type"] === "disabled") {
+						$disabledClass = "disabled";
+					}
+				?>
 				<div class="col s12 m4 l4">
-					<div class="card blue-grey darken-1">
+					<div class="card blue-grey darken-1 <?php echo $disabledClass ?>">
 						<div class="card-content white-text">
 							<span class="card-title truncate"><?php echo $camera["name"] ?></span>
 						</div>
@@ -31,6 +37,9 @@
 							<a href="<?php url('camera/' . $camera["id"]) ?>"><?php mutation("cameras.show") ?></a>
 							<a href="<?php url('camera/' . $camera["id"] . '/archive') ?>"><?php mutation("nav.archive") ?></a>
 							<a href="<?php url('camera/delete/' . $camera["id"]) ?>">delete</a>
+							<?php if ($disabledClass == "disabled"): ?>
+								<span class="deep-orange darken-2">disabled camera</span>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>

@@ -93,6 +93,8 @@ class CamerasController {
 			self::index();
 		}
 
+		dd($camera);
+
 		// render the archive view with the camera
 		render("cameras/archive", ["camera" => $camera]);
 	}
