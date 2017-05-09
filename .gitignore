@@ -6,6 +6,7 @@ public/fonts
 public/fonts/*
 public/js
 public/js/*
+public/streamArchive
 
 node_modules/
 vendor/
