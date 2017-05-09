@@ -185,6 +185,31 @@ $router->map('GET', '/camera/delete/[i:id]', function ($camera_id) {
     CamerasController::delete($camera_id);
 });
 
+$router->map('GET', '/trygetimage', function () {
+    $url = 'http://96.10.1.168/mjpg/1/video.mjpg?timestamp=1494354429756';
+
+    $boundary="\n--";
+    $f = fopen($url,"r");
+       if(!$f) {
+            echo "error";
+       } else {
+            while (substr_count($r,"Content-Length") != 2) $r.=fread($f,512);
+
+            $start = strpos($r,'ÿ');
+            $end   = strpos($r,$boundary,$start)-1;
+            $frame = substr("$r",$start,$end - $start);
+
+            header("Content-type: image/jpeg");
+            echo $frame;
+
+            $content = file_get_contents($f);
+            file_put_contents('stuff', $content);
+       }
+
+    fclose($f);
+    return true;
+});
+
 // handle route matches
 $match = $router->match();
 if( $match && is_callable( $match['target'] ) ) {
