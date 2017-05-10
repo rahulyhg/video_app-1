@@ -195,8 +195,6 @@ $router->map('GET', '/getArchiveFrame/[i:camera_id]', function ($camera_id) {
 
         $img = 'public/streamArchive/' . $camera_id . '/' . $timestamp . '.png';
         file_put_contents($img, file_get_contents($url));
-
-        return true;
     }
 });
 
