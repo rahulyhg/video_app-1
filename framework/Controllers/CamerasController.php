@@ -93,11 +93,6 @@ class CamerasController {
 			self::index();
 		}
 
-		// render a different frontend for a streaming camera
-		if ($camera["type"] === "stream") {
-			render("cameras/streamAchive", ["camera" => $camera]);
-		}
-
 		// render the archive view with the camera
 		render("cameras/archive", ["camera" => $camera]);
 	}

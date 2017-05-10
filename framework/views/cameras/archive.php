@@ -5,6 +5,7 @@
 </head>
 <body>
 	<div class="container">
+	tu zme
 		<?php insert("partials/nav") ?>
 
 		<div class="row">

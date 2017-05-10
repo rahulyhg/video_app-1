@@ -91,7 +91,8 @@ var formatTime = function(date) {
  */
 var loadFrame = function(timestamp) {
 	// update the image output
-	var imageUrl = streamAddress + "?JpegCam=1&VCAOverlay=" + vcaOverlaySetting + "&rnd=" + timestamp;
+	var baseUrl = window.location.origin;
+	var imageUrl = baseUrl + "/" + "public" + "/" + "streamArchive" + "/" + 2 + "/" + timestamp + ".png";
 	$(archiveImageHolder).attr("src", imageUrl);
 
 	// reassign the date to javascipt readable object
