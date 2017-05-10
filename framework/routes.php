@@ -186,14 +186,18 @@ $router->map('GET', '/camera/delete/[i:id]', function ($camera_id) {
 });
 
 $router->map('GET', '/getArchiveFrame/[i:camera_id]', function ($camera_id) {
-    $timestamp = date_create()->getTimestamp();
-    // $url = 'http://96.10.1.168/mjpg/1/video.mjpg';
-    $url = 'http://147.232.25.37/snap.jpg';
+    $seconds = 59;
 
-    $img = 'public/streamArchive/' . $camera_id . '/' . $timestamp . '.png';
-    file_put_contents($img, file_get_contents($url));
+    for ($i = 0; $i < $seconds; $i++) {
+        $timestamp = date_create()->getTimestamp();
+        // $url = 'http://96.10.1.168/mjpg/1/video.mjpg';
+        $url = 'http://147.232.25.37/snap.jpg';
 
-    return true;
+        $img = 'public/streamArchive/' . $camera_id . '/' . $timestamp . '.png';
+        file_put_contents($img, file_get_contents($url));
+
+        return true;
+    }
 });
 
 // handle route matches
