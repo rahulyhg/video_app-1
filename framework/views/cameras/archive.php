@@ -34,7 +34,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s12 m6 l6 center-align">
+			<div class="col s12 m12 l12 center-align">
 				<i class="material-icons archive_button" id="archive_play_button">play_circle_outline</i>
 				<i class="material-icons archive_button" id="archive_pause_button">pause_circle_outline</i>
 				<input type="range" id="archiveSlider" min="0" max="86400" value="0" />

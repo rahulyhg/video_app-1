@@ -107,6 +107,7 @@ var loadFrame = function(timestamp) {
 	}
 
 	errorCallback = function() {
+		console.log("error");
 		++errorCounter;
 		if (errorCounter > 30) {
 			displayArchiveError();
