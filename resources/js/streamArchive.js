@@ -5,7 +5,7 @@ var getCameraId = function(camera_id) {
 };
 
 $(document).ready(function() {
-	var timestamp = 1494431161;
+	var timestamp = 1494432573;
 
 	setInterval(function() {
 		$("#archive_camera_stream").attr(
