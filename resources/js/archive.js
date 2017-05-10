@@ -84,6 +84,10 @@ var formatTime = function(date) {
 	return hours + ":" + minutes + ":" + seconds;
 };
 
+var displayArchiveError = function() {
+	alert("arhive unavailable");
+}
+
 /**
  * Loads the next frame in the video.
  * 
@@ -93,7 +97,21 @@ var loadFrame = function(timestamp) {
 	// update the image output
 	var baseUrl = window.location.origin;
 	var imageUrl = baseUrl + "/" + "public" + "/" + "streamArchive" + "/" + 2 + "/" + timestamp + ".png";
-	$(archiveImageHolder).attr("src", imageUrl);
+
+	// check if the image exist and only change it if it does
+	$("#imageTester").attr("src", imageUrl);
+	errorCounter = 0;
+	loadCallback = function() {
+		$(archiveImageHolder).attr("src", imageUrl);
+		errorCounter = 0;
+	}
+
+	errorCallback = function() {
+		++errorCounter;
+		if (errorCounter > 30) {
+			displayArchiveError();
+		}
+	}
 
 	// reassign the date to javascipt readable object
 	var date = new Date(timestamp * 1000);

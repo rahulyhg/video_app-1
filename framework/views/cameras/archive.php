@@ -27,6 +27,10 @@
 		<div class="row" id="archive_camera_holder">
 			<div class="col s12 m12 l12">
 				<img src="<?php echo $camera["stream_address"] ?>" id="archive_camera_stream">
+
+				<!-- image url test -->
+				<img style="display: none" id="imageTester" onerror="errorCallback()" onload="loadCallback()" />
+				<!-- image url test -->
 			</div>
 		</div>
 
