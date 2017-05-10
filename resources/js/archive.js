@@ -84,10 +84,6 @@ var formatTime = function(date) {
 	return hours + ":" + minutes + ":" + seconds;
 };
 
-var displayArchiveError = function() {
-	alert("arhive unavailable");
-}
-
 /**
  * Loads the next frame in the video.
  * 
@@ -106,13 +102,7 @@ var loadFrame = function(timestamp) {
 		errorCounter = 0;
 	}
 
-	errorCallback = function() {
-		console.log("error");
-		++errorCounter;
-		if (errorCounter > 30) {
-			displayArchiveError();
-		}
-	}
+	errorCallback = function() {}
 
 	// reassign the date to javascipt readable object
 	var date = new Date(timestamp * 1000);
