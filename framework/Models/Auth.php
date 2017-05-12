@@ -16,7 +16,7 @@ class Auth {
 			// authenticate passwords
 			if (password_verify($credentials["password"], $user["password"])) {
 				// store the user to a session
-				$_SESSION["id"] = $user["id"];
+				$_SESSION["logged_in_user"] = $user["id"];
 
 				// redirect to index
 				return true;
@@ -45,7 +45,7 @@ class Auth {
 	 */
 	public static function user() {
 		// get the user from session
-		$user = User::get("id", $_SESSION["id"]);
+		$user = User::get("id", $_SESSION["logged_in_user"]);
 		if ($user) {
 			return $user;
 		}
