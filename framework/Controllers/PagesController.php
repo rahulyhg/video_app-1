@@ -1,7 +1,7 @@
 <?php
 
 namespace Controllers;
-session_start();
+
 class PagesController {
 	/**
 	 * Displays the landing page
