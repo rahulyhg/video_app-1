@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+session_start();
 
 use Core\Config;
 

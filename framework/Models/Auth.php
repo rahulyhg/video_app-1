@@ -8,6 +8,7 @@ class Auth {
 	 * Logs the user in
 	 */
 	public static function login($credentials) {
+		session_start();
 		// check if the user is in the database
 		$user = User::get("email", $credentials["email"]);
 
